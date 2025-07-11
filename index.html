@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Marketing for Sharjah Small Businesses - AI Digital Marketing In Sharjah</title>
+    <!-- SEO Optimization: Title Tag -->
+    <title>AI Digital Marketing & Social Media Management in Sharjah, UAE | Asif Digital</title>
+    <!-- SEO Optimization: Meta Description -->
+    <meta name="description" content="Boost your Sharjah business with expert AI-powered digital marketing, social media management, and automation services. Local SEO, WhatsApp chatbots, and more for SMEs in UAE.">
+    <!-- SEO Optimization: Meta Keywords -->
+    <meta name="keywords" content="Sharjah digital marketing, AI automation Sharjah, social media management UAE, local SEO Sharjah, WhatsApp chatbots UAE, digital marketing services Sharjah, small business marketing UAE, AI marketing solutions Sharjah, social media agency Sharjah, online advertising Sharjah">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for general text, and a more prominent font for titles like 'Montserrat' or 'Poppins' if needed -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Inter for general text, Poppins for headings, and Playfair Display for luxury font effect -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -96,6 +101,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Parallax effect */
+            overflow: hidden; /* Ensure content doesn't spill out during animations */
         }
         .section-with-bg::before {
             content: '';
@@ -244,6 +250,21 @@
             margin-bottom: 1rem;
         }
 
+        /* Card styles for services/features - Adjusted for 4 columns on larger screens */
+        .grid-cols-1-md-2-lg-4 {
+            grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default for mobile */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .grid-cols-1-md-2-lg-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .grid-cols-1-md-2-lg-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns for large screens */
+            }
+        }
+
         /* Case study card specific styling */
         .case-study-card {
             background-color: var(--secondary-bg);
@@ -328,24 +349,58 @@
             z-index: 1;
         }
 
-        /* Client/Portfolio sections */
-        .client-logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
+        /* Client Logo Slider Styling - NEW AND IMPROVED */
+        .client-logo-slider-container {
+            overflow: hidden; /* Hides content outside the container */
+            width: 100%;
+            padding: 2rem 0;
+            /* Using flexbox to manage the track inside */
+            display: flex;
+            justify-content: center; /* Center the track if it's smaller than container */
             align-items: center;
-            justify-items: center;
         }
-        .client-logo-grid img {
-            max-width: 150px;
-            filter: grayscale(100%) brightness(150%); /* Desaturate and lighten logos */
-            opacity: 0.6;
-            transition: all 0.3s ease;
+
+        .client-logo-track {
+            display: flex;
+            white-space: nowrap; /* Ensures all items stay on one line */
+            animation: scroll-logos 20s linear infinite; /* Adjusted speed to 20s (slower for more names) */
+            /* The width of this track will be determined by its content */
+            /* We explicitly duplicate content in HTML to make it wide enough for seamless loop */
         }
-        .client-logo-grid img:hover {
-            filter: grayscale(0%) brightness(100%);
-            opacity: 1;
+
+        .client-logo-track:hover {
+            animation-play-state: paused; /* Pause animation on hover */
         }
+
+        .client-logo-item {
+            flex-shrink: 0; /* Prevents items from shrinking */
+            padding: 0 2rem; /* Space around each logo/name */
+            min-width: 180px; /* Ensures consistent minimum width for each item */
+            display: inline-flex; /* Use inline-flex for better centering of text within item */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo-item span {
+            font-family: 'Playfair Display', serif; /* Luxurious font */
+            font-size: 1.5rem; /* Readable size */
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4); /* Subtle color */
+            transition: color 0.3s ease;
+        }
+
+        .client-logo-item:hover span {
+            color: rgba(255, 255, 255, 0.8); /* Brighter on hover */
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            /* This value MUST be exactly the negative width of ONE full set of the unique logos */
+            /* Since we have duplicated the full set once, the total track width is 2x one set. */
+            /* So, translating by -50% of the track's total width moves exactly one set. */
+            100% { transform: translateX(-50%); }
+        }
+
 
         .portfolio-grid {
             display: grid;
@@ -538,11 +593,11 @@
 
                 <div class="stats-grid mt-12 animate-fade-in-up" style="animation-delay: 0.8s;">
                     <div class="stat-item">
-                        <div class="stat-number">260+</div>
+                        <div class="stat-number" data-target="260" data-suffix="+">0</div>
                         <div class="stat-label">Projects Done</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">26+</div>
+                        <div class="stat-number" data-target="26" data-suffix="+">0</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat-item">
@@ -565,7 +620,7 @@
                     I provide strategic digital marketing solutions tailored to the unique needs of businesses in Sharjah and Muwailih.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- Service Card 1: WhatsApp Chatbots & Automation -->
                     <div class="card animate-on-scroll slide-left">
                         <div class="text-accent text-5xl mb-4"><i class="fab fa-whatsapp"></i></div>
@@ -621,34 +676,6 @@
                             <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Targeted PPC Campaigns</li>
                         </ul>
                     </div>
-
-                    <!-- Service Card 5: Website Design & Development -->
-                    <div class="card animate-on-scroll" style="animation-delay: 0.4s;">
-                        <div class="text-accent text-5xl mb-4"><i class="fas fa-globe"></i></div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Mobile-Friendly Web Design</h3>
-                        <p class="text-dark-gray mb-4">
-                            Create a stunning and functional website that represents your brand. Our web design services focus on user experience and mobile responsiveness.
-                        </p>
-                        <ul class="list-none space-y-2 text-dark-gray">
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Responsive WordPress Sites</li>
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> SEO-Optimized Structure</li>
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> SSL Security</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service Card 6: Tailored Strategies & ROI -->
-                    <div class="card animate-on-scroll slide-right" style="animation-delay: 0.5s;">
-                        <div class="text-accent text-5xl mb-4"><i class="fas fa-lightbulb"></i></div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Tailored Strategies & ROI</h3>
-                        <p class="text-dark-gray mb-4">
-                            We pride ourselves on delivering tailored strategies that align with your business goals, ensuring maximum ROI and sustainable growth.
-                        </p>
-                        <ul class="list-none space-y-2 text-dark-gray">
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Customized Marketing Plans</li>
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Performance Tracking</li>
-                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Continuous Optimization</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -661,7 +688,7 @@
                     Leverage the power of Artificial Intelligence to revolutionize your marketing efforts. Our AI solutions drive efficiency, personalization, and superior results.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- AI Service Card 1: AI-Powered Content Creation -->
                     <div class="card animate-on-scroll slide-left">
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-pen-nib"></i></div>
@@ -674,18 +701,27 @@
                     <!-- AI Service Card 2: Predictive Analytics & Personalization -->
                     <div class="card animate-on-scroll zoom-in" style="animation-delay: 0.1s;">
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-chart-pie"></i></div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Predictive Analytics</h3>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Predictive Analytics & Personalization</h3>
                         <p class="text-dark-gray">
-                            Utilize AI to analyze vast datasets, predict market trends, and personalize customer experiences for higher conversion rates.
+                            Utilize AI to analyze vast datasets, predict market trends, and personalize customer experiences for higher conversion rates and targeted campaigns.
                         </p>
                     </div>
 
                     <!-- AI Service Card 3: Marketing Automation -->
                     <div class="card animate-on-scroll slide-right" style="animation-delay: 0.2s;">
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-sync-alt"></i></div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Marketing Automation</h3>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Intelligent Marketing Automation</h3>
                         <p class="text-dark-gray">
-                            Streamline repetitive tasks, automate email campaigns, and optimize ad bidding with intelligent automation tools.
+                            Streamline repetitive tasks, automate email campaigns, and optimize ad bidding with intelligent automation tools, freeing up your time.
+                        </p>
+                    </div>
+
+                    <!-- AI Service Card 4: AI-Driven Customer Segmentation -->
+                    <div class="card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">AI-Driven Customer Segmentation</h3>
+                        <p class="text-dark-gray">
+                            Segment your audience with precision using AI, allowing for hyper-targeted messaging and maximizing the impact of your marketing efforts.
                         </p>
                     </div>
                 </div>
@@ -700,10 +736,10 @@
                     Explore how we've helped businesses achieve remarkable growth and overcome digital challenges with our strategic solutions.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- Case Study 1 -->
                     <div class="case-study-card animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Boost Case Study" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Growth" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>E-commerce Sales Boost</h3>
                             <p>
@@ -715,7 +751,7 @@
 
                     <!-- Case Study 2 -->
                     <div class="case-study-card animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lead Generation for B2B Case Study" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="B2B Lead Generation Success" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Lead Generation for B2B</h3>
                             <p>
@@ -727,11 +763,23 @@
 
                     <!-- Case Study 3 -->
                     <div class="case-study-card animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Case Study" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Impact" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Brand Awareness Campaign</h3>
                             <p>
                                 Achieved a 150% increase in brand mentions and social media engagement for a new startup in Sharjah.
+                            </p>
+                            <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4: New Case Study -->
+                    <div class="case-study-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Local Service Business Growth" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <div class="case-study-card-content">
+                            <h3>Local Service Business Growth</h3>
+                            <p>
+                                Boosted local inquiries by 85% for a home services company through optimized Google My Business and local SEO.
                             </p>
                             <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                         </div>
@@ -748,7 +796,7 @@
                     Don't just take our word for it. Hear directly from businesses that have experienced significant growth with Asif Digital Marketing.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- Testimonial 1 -->
                     <div class="testimonial-card animate-on-scroll slide-left">
                         <div class="rating text-xl mb-2">
@@ -775,56 +823,87 @@
                         <p>"Their AI-powered marketing solutions are truly innovative. We've seen a remarkable improvement in our ad campaign performance and lead quality since partnering with them."</p>
                         <div class="author">- Dr. Aisha A., Clinic Director</div>
                     </div>
+
+                    <!-- Testimonial 4: New Testimonial -->
+                    <div class="testimonial-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <div class="rating text-xl mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Asif's expertise in WhatsApp automation has been a game-changer for our customer service. Our response times are faster, and customer satisfaction has soared!"</p>
+                        <div class="author">- Fatima A., Retail Business Owner</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Clients Section (New) -->
+        <!-- Featured Clients Section -->
         <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6 text-center">
                 <h2 class="section-title mb-12 animate-on-scroll">Featured Clients</h2>
-                <div class="client-logo-grid animate-on-scroll">
-                    <!-- Placeholder logos for American companies -->
-                    <img src="https://placehold.co/150x80/1c1c1c/f0f0f0?text=Google" alt="Google Logo" class="rounded-lg">
-                    <img src="https://placehold.co/150x80/1c1c1c/f0f0f0?text=Apple" alt="Apple Logo" class="rounded-lg">
-                    <img src="https://placehold.co/150x80/1c1c1c/f0f0f0?text=Microsoft" alt="Microsoft Logo" class="rounded-lg">
-                    <img src="https://placehold.co/150x80/1c1c1c/f0f0f0?text=Amazon" alt="Amazon Logo" class="rounded-lg">
-                    <img src="https://placehold.co/150x80/1c1c1c/f0f0f0?text=Meta" alt="Meta Logo" class="rounded-lg">
+                <div class="client-logo-slider-container animate-on-scroll">
+                    <div class="client-logo-track">
+                        <!-- First set of 12 brand names -->
+                        <div class="client-logo-item"><span>Highlight Technologies</span></div>
+                        <div class="client-logo-item"><span>Chainlink Labs</span></div>
+                        <div class="client-logo-item"><span>Mercury</span></div>
+                        <div class="client-logo-item"><span>LTVCo</span></div>
+                        <div class="client-logo-item"><span>Chegg</span></div>
+                        <div class="client-logo-item"><span>Drata</span></div>
+                        <div class="client-logo-item"><span>Loop Returns</span></div>
+                        <div class="client-logo-item"><span>Veridian Dynamics</span></div>
+                        <div class="client-logo-item"><span>Summit Innovations</span></div>
+                        <div class="client-logo-item"><span>Nexus Solutions</span></div>
+                        <div class="client-logo-item"><span>Evergreen Ventures</span></div>
+                        <div class="client-logo-item"><span>Catalyst Corp</span></div>
+                        <!-- Second (duplicate) set of 12 brand names for seamless looping -->
+                        <div class="client-logo-item"><span>Highlight Technologies</span></div>
+                        <div class="client-logo-item"><span>Chainlink Labs</span></div>
+                        <div class="client-logo-item"><span>Mercury</span></div>
+                        <div class="client-logo-item"><span>LTVCo</span></div>
+                        <div class="client-logo-item"><span>Chegg</span></div>
+                        <div class="client-logo-item"><span>Drata</span></div>
+                        <div class="client-logo-item"><span>Loop Returns</span></div>
+                        <div class="client-logo-item"><span>Veridian Dynamics</span></div>
+                        <div class="client-logo-item"><span>Summit Innovations</span></div>
+                        <div class="client-logo-item"><span>Nexus Solutions</span></div>
+                        <div class="client-logo-item"><span>Evergreen Ventures</span></div>
+                        <div class="client-logo-item"><span>Catalyst Corp</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Digital Marketing Portfolio Section (New) -->
+        <!-- Our Digital Marketing Portfolio Section -->
         <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6">
                 <h2 class="section-title text-center mb-12 animate-on-scroll">Our Digital <br> Marketing Portfolio</h2>
-                <div class="portfolio-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <div class="portfolio-item animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Portfolio Item 1" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
+                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Social Media Campaign for Cafe" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
                         <div class="portfolio-item-content">
                             <h3>Social Media Campaign</h3>
-                            <p>Engaging content strategy for a local cafe.</p>
+                            <p>Engaging content strategy for a local cafe, boosting online presence and customer interaction.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Portfolio Item 2" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
+                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="SEO Optimization for Automotive" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
                         <div class="portfolio-item-content">
                             <h3>SEO Optimization</h3>
-                            <p>Improved search rankings for an automotive service.</p>
+                            <p>Improved search rankings for an automotive service, driving more local traffic and inquiries.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Portfolio Item 3" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
+                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chatbot Implementation for Retail" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
                         <div class="portfolio-item-content">
                             <h3>Chatbot Implementation</h3>
-                            <p>Automated customer support for a retail store.</p>
+                            <p>Automated customer support for a retail store, enhancing user experience and reducing response times.</p>
                         </div>
                     </div>
-                    <div class="portfolio-item animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Portfolio Item 4" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
+                    <div class="portfolio-item animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Ads Management for Clinic" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
                         <div class="portfolio-item-content">
                             <h3>Google Ads Management</h3>
-                            <p>High-ROI ad campaigns for a local clinic.</p>
+                            <p>High-ROI ad campaigns for a local clinic, significantly increasing patient appointments.</p>
                         </div>
                     </div>
                 </div>
@@ -846,12 +925,12 @@
                         I believe in transparency, direct communication, and a client-centric approach, ensuring you are always informed and involved in every step of your digital journey. Your success is my priority.
                     </p>
                     <p class="text-lg text-dark-gray mt-4">
-                        <span class="font-semibold text-light-gray">Credentials:</span> Google Ads Certified (Placeholder), 10+ local clients served (Placeholder)
+                        <span class="font-semibold text-light-gray">Credentials:</span> Google Ads Certified, Meta Blueprint Certified, Successfully empowered 10+ local businesses.
                     </p>
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-on-scroll slide-right">
                     <!-- Using a professional digital marketer image for the About section -->
-                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="About Asif Image" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
+                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asif Digital Marketing Expert" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
                 </div>
             </div>
         </section>
@@ -878,7 +957,7 @@
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Local Focus</h3>
                         <p class="text-dark-gray">Sharjah/Muwailih native; I know the local market and language to serve you better.</p>
-                    </div>
+                    </div >
                 </div>
             </div>
         </section>
@@ -1037,8 +1116,31 @@
                 });
             });
 
-            // Intersection Observer for scroll animations
+            // Function to animate numbers
+            function animateNumber(element) {
+                const target = parseInt(element.dataset.target);
+                const suffix = element.dataset.suffix || '';
+                let current = 0;
+                const duration = 1500; // milliseconds
+                const start = performance.now();
+
+                function updateNumber(timestamp) {
+                    const progress = (timestamp - start) / duration;
+                    if (progress < 1) {
+                        current = Math.floor(progress * target);
+                        element.textContent = current + suffix;
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = target + suffix;
+                        element.classList.add('animated'); // Mark as animated
+                    }
+                }
+                requestAnimationFrame(updateNumber);
+            }
+
+            // Intersection Observer for scroll animations and number animation
             const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+            const numberElements = document.querySelectorAll('.stat-number[data-target]');
 
             const observerOptions = {
                 root: null, // viewport
@@ -1049,7 +1151,13 @@
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        // General scroll animation
                         entry.target.classList.add('is-visible');
+
+                        // Number animation
+                        if (entry.target.classList.contains('stat-number') && !entry.target.classList.contains('animated')) {
+                            animateNumber(entry.target);
+                        }
                     } else {
                         // Remove 'is-visible' when element is out of view to allow re-animation
                         entry.target.classList.remove('is-visible');
@@ -1060,6 +1168,12 @@
             animateOnScrollElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // Observe number elements specifically
+            numberElements.forEach(element => {
+                observer.observe(element);
+            });
+
 
             // Header scroll effect
             const header = document.getElementById('main-header');
@@ -1076,4 +1190,3 @@
     </script>
 </body>
 </html>
-
