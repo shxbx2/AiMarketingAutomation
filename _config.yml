@@ -1,0 +1,6 @@
+title: Ai Marketing Automation
+description: Your website's description goes here
+baseurl: /AiMarketingAutomation # IMPORTANT: This must exactly match your repository name!
+permalink: /blog/:title/ # Recommended for clean blog post URLs
+markdown: kramdown
+theme: minima # A simple default theme, you can change it later
