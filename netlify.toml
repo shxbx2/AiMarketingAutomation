@@ -1,0 +1,6 @@
+# netlify.toml
+[build]
+  functions = "netlify/functions" # This tells Netlify where your serverless functions are located
+
+[functions]
+  node_bundler = "esbuild" # Recommended for faster builds
