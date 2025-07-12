@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.7" // Using a slightly older, stable version that is known to work well
+    "node-fetch": "2.6.1" // Changed to a specific, known stable version
   }
 }
