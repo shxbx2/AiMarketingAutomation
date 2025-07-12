@@ -1,80 +1,72 @@
-// netlify/functions/proxy.js
-exports.handler = async (event, context) => {
-    const huggingFaceApiToken = process.env.HUGGING_FACE_API_TOKEN;
-    const modelId = "moonshotai/Kimi-K2-Instruct";
-    const apiUrl = `https://api-inference.huggingface.co/models/${modelId}`;
+// This is a Netlify serverless function that acts as a secure proxy.
+// It takes a request from your website, adds your secret API key,
+// sends it to Hugging Face, and returns the response.
 
-    let userMessage;
-    try {
-        const body = JSON.parse(event.body);
-        userMessage = body.message;
-    } catch (error) {
+exports.handler = async (event) => {
+    // Only allow POST requests.
+    if (event.httpMethod !== 'POST') {
         return {
-            statusCode: 400,
-            body: JSON.stringify({ error: "Invalid request body. Expected JSON with 'message' field." }),
+            statusCode: 405, // Method Not Allowed
+            body: JSON.stringify({ error: 'This function only accepts POST requests.' }),
         };
     }
 
-    if (!userMessage) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({ error: "No message provided." }),
-        };
-    }
+    // Get the secret API key from the Netlify environment variables.
+    const HUGGING_FACE_API_TOKEN = process.env.HUGGING_FACE_API_TOKEN;
 
-    if (!huggingFaceApiToken) {
-        console.error("HUGGING_FACE_API_TOKEN environment variable is not set.");
+    if (!HUGGING_FACE_API_TOKEN) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Server configuration error: API token missing. Please configure HUGGING_FACE_API_TOKEN in Netlify environment variables." }),
+            body: JSON.stringify({ error: 'API token is not configured on the server.' }),
         };
     }
 
     try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${huggingFaceApiToken}`
-            },
-            body: JSON.stringify({
-                inputs: userMessage,
-                parameters: {
-                    max_new_tokens: 100,
-                    temperature: 0.7,
-                    do_sample: true
-                }
-            })
-        });
-
-        const result = await response.json();
-
-        if (response.status !== 200) {
-            console.error("Hugging Face API Error Response:", result);
+        // Get the data sent from the website (the prompt and model).
+        const { model, inputs } = JSON.parse(event.body);
+        
+        if (!model || !inputs) {
             return {
-                statusCode: response.status,
-                body: JSON.stringify({ error: result.error || "Error from Hugging Face API" }),
+                statusCode: 400, // Bad Request
+                body: JSON.stringify({ error: 'Missing "model" or "inputs" in the request body.' }),
             };
         }
 
-        let aiResponseText = "Sorry, I couldn't get a response from the AI.";
-        if (Array.isArray(result) && result.length > 0 && result[0].generated_text) {
-            aiResponseText = result[0].generated_text;
-        } else {
-            console.error("Unexpected Hugging Face API response structure:", result);
-            aiResponseText = "Unexpected response from AI. Please try again.";
+        const hfURL = `https://api-inference.huggingface.co/models/${model}`;
+
+        // Use the native fetch API to call Hugging Face.
+        const response = await fetch(hfURL, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${HUGGING_FACE_API_TOKEN}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ inputs: inputs }),
+        });
+
+        // If Hugging Face returned an error, pass it back to the client.
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Hugging Face API Error:', errorText);
+            return {
+                statusCode: response.status,
+                body: JSON.stringify({ error: `Hugging Face API Error: ${errorText}` }),
+            };
         }
 
+        // If successful, get the JSON data and return it.
+        const data = await response.json();
+        
         return {
             statusCode: 200,
-            body: JSON.stringify({ response: aiResponseText }),
+            body: JSON.stringify(data),
         };
 
     } catch (error) {
-        console.error('Error in Netlify Function:', error);
+        console.error('Proxy Function Error:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Internal server error while processing AI request." }),
+            body: JSON.stringify({ error: `An internal server error occurred: ${error.message}` }),
         };
     }
 };
