@@ -974,7 +974,7 @@
                             <h3>Lead Generation for B2B</h3>
                             <p>
                                 Generated over 500 qualified leads in 3 months for a B2B tech company using LinkedIn marketing and content syndication.
-                            </p>
+                                </p>
                             <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                         </div>
                     </div>
@@ -1201,7 +1201,7 @@
                             <div class="text-accent text-3xl"><i class="fab fa-whatsapp"></i></div>
                             <div>
                                 <h3 class="text-xl font-semibold text-white">WhatsApp</h3>
-                                <a href="https://wa.me/97154566094" target="_blank" class="text-dark-gray hover:text-accent transition-colors duration-300">+971 54 586 6094</a>
+                                <a href="https://wa.me/971545866094" target="_blank" class="text-dark-gray hover:text-accent transition-colors duration-300">+971 54 586 6094</a>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
@@ -1560,16 +1560,23 @@
                 // This indicates a problem in the HTML structure or IDs
             } else {
                 // Initial message from AI, with a system instruction to encourage conversational tone
+                // Note: Chat history format for Hugging Face is simpler, typically just the input string.
+                // We'll maintain a local chat history for display purposes, but only send the current prompt to HF.
                 let chatHistory = [
-                    {
-                        role: "user",
-                        parts: [{ text: "You are a friendly and conversational AI assistant for Asif Digital Marketing. Your goal is to provide helpful information about digital marketing services, AI solutions, and answer common questions in a natural, easy-to-understand way. Avoid using markdown formatting like bolding (**), bullet points (*), or numbered lists (1., 2.) in your responses. Instead, use natural language and paragraph breaks to structure your answers. When asked 'what can you do', provide a concise, conversational overview rather than a detailed list." }]
-                    },
-                    {
-                        role: "model",
-                        parts: [{ text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }]
-                    }
+                    { role: "ai", text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }
                 ];
+
+                // Function to add messages to the chat display
+                function addMessageToChat(message, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('chat-message', sender);
+                    messageDiv.innerHTML = message; // Use innerHTML for potential <br> tags
+                    chatMessages.appendChild(messageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+                }
+
+                // Display initial AI message
+                addMessageToChat(chatHistory[0].text, chatHistory[0].role);
 
                 chatbotToggleButton.addEventListener('click', () => {
                     chatbotModalOverlay.style.display = 'flex'; // Show the modal
@@ -1592,70 +1599,62 @@
                     if (userMessageText === '') return;
 
                     // Display user message
-                    const userMessageDiv = document.createElement('div');
-                    userMessageDiv.classList.add('chat-message', 'user');
-                    userMessageDiv.textContent = userMessageText;
-                    chatMessages.appendChild(userMessageDiv);
-
-                    // Add user message to history
-                    chatHistory.push({ role: "user", parts: [{ text: userMessageText }] });
+                    addMessageToChat(userMessageText, 'user');
 
                     chatInput.value = ''; // Clear input
                     chatInput.style.height = 'auto'; // Reset textarea height
-                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
 
                     loadingIndicator.style.display = 'block'; // Show loading indicator
 
-                    try {
-                        const payload = { contents: chatHistory };
-                        // API Key from your latest screenshot
-                        const apiKey = "AIzaSyA3qWrwVwRWC4cJyWVmcX6zgLf0TVJJBDU"; // Confirmed this is the key used.
-                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    // Hugging Face API Configuration
+                    // YOUR HUGGING FACE API TOKEN
+                    const huggingFaceApiToken = "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"; // <<< YOUR ACTUAL HUGGING FACE TOKEN
+                    // YOUR CHOSEN MODEL ID
+                    const modelId = "microsoft/Phi-4-mini-flash-reasoning"; // <<< YOUR CHOSEN MODEL ID
+                    const apiUrl = `https://api-inference.huggingface.co/models/${modelId}`;
 
+                    try {
                         const response = await fetch(apiUrl, {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${huggingFaceApiToken}`
+                            },
+                            body: JSON.stringify({
+                                inputs: userMessageText,
+                                // Parameters can vary by model. These are common for text generation.
+                                parameters: {
+                                    max_new_tokens: 100, // Limit response length
+                                    temperature: 0.7,    // Creativity level
+                                    do_sample: true      // Sample from distribution
+                                }
+                            })
                         });
 
                         const result = await response.json();
 
                         loadingIndicator.style.display = 'none'; // Hide loading indicator
 
-                        let aiResponseText = "Sorry, I couldn't get a response. Please try again.";
-                        if (result.candidates && result.candidates.length > 0 &&
-                            result.candidates[0].content && result.candidates[0].content.parts &&
-                            result.candidates[0].content.parts.length > 0) {
-                            aiResponseText = result.candidates[0].content.parts[0].text;
+                        let aiResponseText = "Sorry, I couldn't get a response from the AI. Please try again or check the console for errors.";
 
-                            // Process the AI response to remove markdown and add line breaks for display
-                            aiResponseText = aiResponseText.replace(/\*\*(.*?)\*\*/g, '$1'); // Remove bolding asterisks
-                            aiResponseText = aiResponseText.replace(/^-?\s*\*+\s*/gm, ''); // Remove list item asterisks/hyphens
-                            aiResponseText = aiResponseText.replace(/\n/g, '<br>'); // Replace newlines with <br> for display
+                        // Hugging Face Inference API response structure can vary slightly by model.
+                        // For text generation, it's usually an array with a 'generated_text' field.
+                        if (Array.isArray(result) && result.length > 0 && result[0].generated_text) {
+                            aiResponseText = result[0].generated_text;
+                        } else if (result.error) {
+                            aiResponseText = `AI Error: ${result.error}`;
+                            console.error("Hugging Face API Error:", result.error);
                         } else {
-                            console.error("Unexpected API response structure:", result);
+                            console.error("Unexpected Hugging Face API response structure:", result);
                         }
 
                         // Display AI message
-                        const aiMessageDiv = document.createElement('div');
-                        aiMessageDiv.classList.add('chat-message', 'ai');
-                        aiMessageDiv.innerHTML = aiResponseText; // Use innerHTML to render <br> tags
-                        chatMessages.appendChild(aiMessageDiv);
+                        addMessageToChat(aiResponseText, 'ai');
 
-                        // Add AI message to history (store original, unformatted text for next API call)
-                        // This is important because the model should not see its own markdown formatting in subsequent turns.
-                        chatHistory.push({ role: "model", parts: [{ text: result.candidates[0].content.parts[0].text }] });
-
-                        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
                     } catch (error) {
-                        console.error('Error fetching from Gemini API:', error);
+                        console.error('Error fetching from Hugging Face API:', error);
                         loadingIndicator.style.display = 'none'; // Hide loading indicator
-
-                        const errorMessageDiv = document.createElement('div');
-                        errorMessageDiv.classList.add('chat-message', 'ai');
-                        errorMessageDiv.textContent = "Oops! Something went wrong. Please try again later.";
-                        chatMessages.appendChild(errorMessageDiv);
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                        addMessageToChat("Oops! Something went wrong while connecting to the AI. Please try again later.", 'ai');
                     }
                 }
 
