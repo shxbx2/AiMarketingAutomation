@@ -1443,9 +1443,11 @@
                 mobileMenuOverlay.style.display = 'none';
             });
 
-            mobileMenuOverlay.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                mobileMenuOverlay.style.display = 'none';
+            mobileMenuOverlay.addEventListener('click', (e) => {
+                // Close if clicking outside the chatbot container
+                if (e.target === chatbotModalOverlay) {
+                    chatbotModalOverlay.style.display = 'none';
+                }
             });
 
             // Close mobile menu when a link is clicked
@@ -1606,7 +1608,7 @@
 
                     try {
                         const payload = { contents: chatHistory };
-                        const apiKey = ""; // Canvas will provide this at runtime
+                        const apiKey = "AQ_Ab8RN6JYYfTeo4eeFB5eeTiSNDYOvesJjaG-lsumA2PqOKHYzw"; // User's provided API key
                         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                         const response = await fetch(apiUrl, {
