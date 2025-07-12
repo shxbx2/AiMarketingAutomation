@@ -1,29 +1,11 @@
 // netlify/functions/proxy.js
-// This function acts as a backend proxy to securely call the Hugging Face API.
-// It retrieves the API token from Netlify's environment variables,
-// preventing it from being exposed in your client-side code.
-
-// IMPORTANT: Node.js 18+ (which Netlify uses for functions by default)
-// includes a native global fetch API, so node-fetch is no longer strictly necessary.
-// We can directly use `fetch` without requiring/importing an external module.
-
-// The main handler function for your Netlify Function.
-// 'event' contains information about the HTTP request (e.g., body, headers).
-// 'context' contains information about the invocation, function, and deployment environment.
 exports.handler = async (event, context) => {
-    // 1. Get the Hugging Face API Token from Netlify Environment Variables
-    //    IMPORTANT: You will set this environment variable in your Netlify dashboard, NOT in this code.
     const huggingFaceApiToken = process.env.HUGGING_FACE_API_TOKEN;
-
-    // 2. Define the Hugging Face model ID (you can also pass this from the frontend if needed)
-    const modelId = "moonshotai/Kimi-K2-Instruct"; // Your chosen model ID
+    const modelId = "moonshotai/Kimi-K2-Instruct";
     const apiUrl = `https://api-inference.huggingface.co/models/${modelId}`;
 
-    // 3. Extract the user's message from the request body
     let userMessage;
     try {
-        // Parse the request body to get the user's message.
-        // The frontend will send a JSON payload like: { message: "Your query" }
         const body = JSON.parse(event.body);
         userMessage = body.message;
     } catch (error) {
@@ -36,7 +18,7 @@ exports.handler = async (event, context) => {
     if (!userMessage) {
         return {
             statusCode: 400,
-            body: JSON.stringify({ error: "No message provided in the request." }),
+            body: JSON.stringify({ error: "No message provided." }),
         };
     }
 
@@ -49,27 +31,24 @@ exports.handler = async (event, context) => {
     }
 
     try {
-        // 4. Make the request to the Hugging Face Inference API using native `fetch`
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${huggingFaceApiToken}` // Use the securely stored token
+                'Authorization': `Bearer ${huggingFaceApiToken}`
             },
             body: JSON.stringify({
                 inputs: userMessage,
-                // Parameters can vary by model. These are common for text generation.
                 parameters: {
-                    max_new_tokens: 100, // Maximum number of tokens to generate in the response
-                    temperature: 0.7,    // Controls randomness (higher = more random)
-                    do_sample: true      // Whether to sample from the distribution (true for creative text)
+                    max_new_tokens: 100,
+                    temperature: 0.7,
+                    do_sample: true
                 }
             })
         });
 
-        const result = await response.json(); // Parse the JSON response from Hugging Face
+        const result = await response.json();
 
-        // 5. Handle potential errors from Hugging Face API
         if (response.status !== 200) {
             console.error("Hugging Face API Error Response:", result);
             return {
@@ -78,7 +57,6 @@ exports.handler = async (event, context) => {
             };
         }
 
-        // 6. Send the AI's response back to the client
         let aiResponseText = "Sorry, I couldn't get a response from the AI.";
         if (Array.isArray(result) && result.length > 0 && result[0].generated_text) {
             aiResponseText = result[0].generated_text;
@@ -93,7 +71,6 @@ exports.handler = async (event, context) => {
         };
 
     } catch (error) {
-        // Catch any network errors or other exceptions during the fetch operation.
         console.error('Error in Netlify Function:', error);
         return {
             statusCode: 500,
