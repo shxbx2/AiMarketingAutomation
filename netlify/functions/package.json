@@ -1,16 +1,8 @@
-// netlify/functions/package.json
 {
-  "name": "netlify-functions",
+  "name": "netlify-functions-for-chatbot",
   "version": "1.0.0",
-  "description": "Dependencies for Netlify serverless functions",
+  "description": "Serverless proxy for Hugging Face API",
   "main": "proxy.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    // Removed node-fetch as we will use native fetch API
-  }
+  "license": "ISC"
 }
