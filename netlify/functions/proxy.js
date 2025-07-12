@@ -20,30 +20,35 @@ exports.handler = async (event) => {
         return { statusCode: 400, body: 'Missing "message" in request body.' };
     }
 
-    // Use the Hugging Face API Token from Netlify Environment Variables
     const huggingFaceApiToken = process.env.HUGGING_FACE_API_TOKEN;
 
     if (!huggingFaceApiToken) {
         return { statusCode: 500, body: JSON.stringify({ error: "HUGGING_FACE_API_TOKEN environment variable is not set." }) };
     }
 
-    // Hugging Face Inference API endpoint for the Kimi-K2-Instruct model
-    const modelId = "moonshotai/Kimi-K2-Instruct";
-    const hfApiUrl = `https://api-inference.huggingface.co/models/${modelId}`;
+    // UPDATED: Using the general Hugging Face Inference API endpoint.
+    // The model ID will now be sent in the request body.
+    const hfApiUrl = `https://api-inference.huggingface.co/models/moonshotai/Kimi-K2-Instruct`; // Direct model endpoint
 
     try {
         const response = await fetch(hfApiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${huggingFaceApiToken}` // Use the securely stored Hugging Face token
+                'Authorization': `Bearer ${huggingFaceApiToken}`
             },
             body: JSON.stringify({
+                // The 'inputs' field contains the text to be processed by the model.
                 inputs: userMessage,
+                // These parameters control the text generation.
                 parameters: {
-                    max_new_tokens: 100,
-                    temperature: 0.7,
-                    do_sample: true
+                    max_new_tokens: 100, // Maximum number of tokens to generate
+                    temperature: 0.7,    // Controls randomness (higher = more random)
+                    do_sample: true      // Whether to sample (true for creative text)
+                },
+                // Optional: You can add options like wait_for_model or use_cache
+                options: {
+                    wait_for_model: true // Ensures the model is loaded before responding
                 }
             })
         });
@@ -52,10 +57,12 @@ exports.handler = async (event) => {
 
         if (!response.ok) {
             console.error("Error from Hugging Face API:", result);
+            // Check for specific Hugging Face error structures
+            const errorMessage = result.error || (result.errors && result.errors.length > 0 ? result.errors[0] : 'Unknown error from Hugging Face API');
             return {
                 statusCode: response.status,
                 body: JSON.stringify({
-                    error: result.error || 'Unknown error from Hugging Face API',
+                    error: errorMessage,
                     details: result
                 })
             };
