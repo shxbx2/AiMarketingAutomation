@@ -1,6 +1,0 @@
-title: Ai Marketing Automation
-description: Boost your Sharjah business with expert AI-powered digital marketing, social media management, and automation services. Local SEO, WhatsApp chatbots, and more for SMEs in UAE
-baseurl: /AiMarketingAutomation # IMPORTANT: This must exactly match your repository name!
-permalink: /blog/:title/ # Recommended for clean blog post URLs
-markdown: kramdown
-theme: minima # A simple default theme, you can change it later
