@@ -3,7 +3,7 @@
   "name": "netlify-functions",
   "version": "1.0.0",
   "description": "Dependencies for Netlify serverless functions",
-  "main": "proxy.js", // Ensure this points to your main function file
+  "main": "proxy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "2.6.1" // Changed to a specific, known stable version
+    // Removed node-fetch as we will use native fetch API
   }
 }
