@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2HBLEBB2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y2HBLEBB2C');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Optimization: Title Tag -->
-    <title>AI Digital Marketing & Social Media Management in Sharjah, UAE | Asif Digital</title>
+    <title>AI Digital Marketing & Website Design in UAE | Sharjah, Dubai, Abu Dhabi, Ajman, RAK | Asif Digital</title>
     <!-- SEO Optimization: Meta Description -->
-    <meta name="description" content="Boost your Sharjah business with expert AI-powered digital marketing, social media management, and automation services. Local SEO, WhatsApp chatbots, and more for SMEs in UAE.">
+    <meta name="description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services. Local SEO, WhatsApp chatbots, and more for SMEs in UAE.">
     <!-- SEO Optimization: Meta Keywords -->
-    <meta name="keywords" content="Sharjah digital marketing, AI automation Sharjah, social media management UAE, local SEO Sharjah, WhatsApp chatbots UAE, digital marketing services Sharjah, small business marketing UAE, AI marketing solutions Sharjah, social media agency Sharjah, online advertising Sharjah">
+    <meta name="keywords" content="Sharjah digital marketing, Dubai digital marketing, Abu Dhabi digital marketing, Ajman digital marketing, Ras Al Khaimah digital marketing, AI automation UAE, social media management UAE, local SEO UAE, WhatsApp chatbots UAE, digital marketing services UAE, small business marketing UAE, AI marketing solutions UAE, social media agency UAE, online advertising UAE, WordPress website design UAE">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter for general text, Poppins for headings, and Playfair Display for luxury font effect -->
@@ -127,19 +118,38 @@
             z-index: 2;
         }
 
-        /* Hero Section Styling to match SparkleAp */
+        /* Hero Section Styling */
         .hero-section {
-            /* Using a high-quality night city skyline image from Pexels */
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%), url('https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center;
-            background-size: cover;
-            background-position: center;
+            position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
-            padding-top: 120px; /* Increased padding to ensure title is not cropped */
+            overflow: hidden; /* Crucial for image slider */
+            padding-top: 120px;
+        }
+        .hero-background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Behind content */
+        }
+        .hero-background-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+        }
+        .hero-background-slider img.active {
+            opacity: 1;
         }
         .hero-section::before {
             content: '';
@@ -540,6 +550,186 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Chatbot specific styles */
+        .chatbot-toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.6);
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's on top */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chatbot-toggle-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.8);
+        }
+
+        .chatbot-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot-container {
+            background-color: var(--primary-bg);
+            border-radius: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 500px;
+            height: 80%;
+            max-height: 600px;
+            position: relative; /* For close button positioning */
+        }
+
+        .chat-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            border-radius: 1.5rem 1.5rem 0 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            line-height: 1.4;
+        }
+
+        .chat-message.user {
+            background: linear-gradient(to right, #6d28d9, #ec4899); /* Purple to Pink */
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem; /* Pointy corner */
+        }
+
+        .chat-message.ai {
+            background-color: var(--secondary-bg);
+            color: var(--text-light);
+            align-self: flex-start;
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 0.25rem; /* Pointy corner */
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            gap: 0.75rem;
+        }
+
+        .chat-input-area textarea {
+            flex-grow: 1;
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-light);
+            resize: none; /* Disable manual resize */
+            min-height: 40px;
+            max-height: 120px; /* Limit height */
+            overflow-y: auto;
+        }
+
+        .chat-input-area button {
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: white;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .chat-input-area button:hover {
+            opacity: 0.9;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            color: var(--text-dark);
+            font-style: italic;
+            padding: 0.5rem;
+        }
+
+        /* Footer specific styles */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .footer-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-section ul li a, .footer-section p, .footer-section address {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .footer-section ul li a:hover {
+            color: var(--accent-gradient-start);
+        }
+        .footer-social-icons a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social-icons a:hover {
+            color: var(--accent-gradient-start);
+        }
     </style>
 </head>
 <body class="bg-primary-dark text-light-gray">
@@ -547,14 +737,15 @@
     <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-30 header-transparent min-h-16">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-bold text-white">AI Digital Marketing In Sharjah</a>
+            <a href="#" class="text-xl md:text-2xl font-bold text-white">AI Digital Marketing In UAE</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#home" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Home</a>
-                <a href="{{ site.baseurl }}/blog.html" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Blogs</a>
+                <a href="#welcome" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Welcome</a>
                 <a href="#how-we-help" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">How We Help</a>
                 <a href="#ai-solutions" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">AI Solutions</a>
                 <a href="#case-studies" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Case Studies</a>
                 <a href="#testimonials" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Testimonials</a>
+                <a href="#faq" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">FAQ</a>
                 <a href="#about" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">About Asif</a>
                 <a href="#contact" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Contact</a>
             </div>
@@ -579,10 +770,12 @@
         </div>
         <nav class="flex flex-col space-y-6 text-xl">
             <a href="#home" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Home</a>
+            <a href="#welcome" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Welcome</a>
             <a href="#how-we-help" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">How We Help</a>
             <a href="#ai-solutions" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">AI Solutions</a>
             <a href="#case-studies" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Case Studies</a>
             <a href="#testimonials" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Testimonials</a>
+            <a href="#faq" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">FAQ</a>
             <a href="#about" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">About Asif</a>
             <a href="#contact" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Contact</a>
         </nav>
@@ -591,13 +784,18 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-section">
+            <div class="hero-background-slider">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+            </div>
             <div class="hero-content">
-                <!-- Adjusted hero-title to use responsive Tailwind classes -->
                 <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
-                    SHARJAH
+                    UAE DIGITAL GROWTH
                 </h1>
                 <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.4s;">
-                    AI-Powered Marketing for Sharjah Small Businesses. Helping Muwailih shops and Sharjah startups grow with AI-driven social media, chatbots & automation.
+                    AI-Powered Marketing for Businesses Across Sharjah, Dubai, Abu Dhabi, Ajman & Ras Al Khaimah.
                 </p>
                 <a href="https://wa.me/971545866094" target="_blank" class="btn-primary inline-block animate-fade-in-up" style="animation-delay: 0.6s;">Get a Free AI Marketing Consultation</a>
 
@@ -611,7 +809,7 @@
                         <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
+                        <div class="stat-number">5+</div> <!-- Updated to 5+ years -->
                         <div class="stat-label">Years of Experience</div>
                     </div>
                     <div class="stat-item">
@@ -622,12 +820,22 @@
             </div>
         </section>
 
+        <!-- Welcome/Introduction Section -->
+        <section id="welcome" class="py-20 bg-secondary-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title mb-4 animate-on-scroll">Welcome to Asif Digital Marketing</h2>
+                <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Hello, I'm Asif, and I extend a warm welcome to my website. Whether you're here through a referral or discovered me on Google while searching for a freelance digital marketer in Ajman, Sharjah, Dubai, Umm Al Quwain, and all across UAE, thank you for visiting Asif Digital Marketing. I'm a leading digital marketing and web design freelancer in Ajman, Sharjah, Dubai, Umm Al Quwain, and all across UAE. I've been working in digital marketing for more than 5 years, offering Social Media Marketing, Search Engine Optimization, Website Designing, Graphics & Brand Designing, Google Ads, and Social Media Ads to help collaborate with you to elevate your businesses' digital presence and achieve your business goals.
+                </p>
+            </div>
+        </section>
+
         <!-- Full-Service Digital Marketing Section (formerly How We Help) -->
         <section id="how-we-help" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6">
                 <h2 class="section-title text-center mb-4 animate-on-scroll">Full-Service <br> Digital Marketing</h2>
                 <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
-                    I provide strategic digital marketing solutions tailored to the unique needs of businesses in Sharjah and Muwailih.
+                    I provide strategic digital marketing solutions tailored to the unique needs of businesses across the UAE, including Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
@@ -650,7 +858,7 @@
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-share-alt"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Social Media Content & Ads</h3>
                         <p class="text-dark-gray mb-4">
-                            Eye-catching posts and targeted ads to attract Sharjah customers on Instagram, Facebook, and TikTok. We craft engaging content and manage your social presence.
+                            Eye-catching posts and targeted ads to attract customers across the UAE on Instagram, Facebook, and TikTok. We craft engaging content and manage your social presence.
                         </p>
                         <ul class="list-none space-y-2 text-dark-gray">
                             <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> AI-Assisted Content Creation</li>
@@ -678,7 +886,7 @@
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Local SEO & Google Ads</h3>
                         <p class="text-dark-gray mb-4">
-                            Make your business easy to find on Google Maps and search. Optimize your Google Business Profile and run effective Google Ads campaigns.
+                            Make your business easy to find on Google Maps and search in Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah. Optimize your Google Business Profile and run effective Google Ads campaigns.
                         </p>
                         <ul class="list-none space-y-2 text-dark-gray">
                             <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Google Business Profile Optimization</li>
@@ -924,9 +1132,9 @@
         <section id="about" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184424/pexels-photo-3184424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2 animate-on-scroll slide-left">
-                    <h2 class="section-title mb-4">About <br> Asif – Sharjah’s AI Marketing Expert</h2>
+                    <h2 class="section-title mb-4">About <br> Asif – UAE’s AI Marketing Expert</h2>
                     <p class="text-lg text-dark-gray mb-6">
-                        I’m Asif, a solo digital marketer in Sharjah specializing in AI solutions. I’m passionate about helping local cafes, shops, and startups automate their marketing with smart chatbots and engaging content.
+                        I’m Asif, a solo digital marketer in the UAE specializing in AI solutions. I’m passionate about helping local cafes, shops, and startups in Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah automate their marketing with smart chatbots and engaging content.
                     </p>
                     <p class="text-lg text-dark-gray mb-6">
                         My expertise lies in leveraging the latest AI tools and techniques to give your business a competitive edge in the evolving digital landscape. I constantly adapt to ensure your strategies are always effective and deliver measurable results.
@@ -948,7 +1156,7 @@
         <!-- Why Choose Us Section -->
         <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6 text-center">
-                <h2 class="section-title mb-6 animate-on-scroll">Why Sharjah <br> Businesses Trust Me</h2>
+                <h2 class="section-title mb-6 animate-on-scroll">Why UAE <br> Businesses Trust Me</h2>
                 <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
                     I offer tailored strategies, a results-driven approach, and transparent communication to ensure your digital marketing efforts yield maximum return on investment.
                 </p>
@@ -966,7 +1174,7 @@
                     <div class="card animate-on-scroll slide-right">
                         <div class="text-accent text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Local Focus</h3>
-                        <p class="text-dark-gray">Sharjah/Muwailih native; I know the local market and language to serve you better.</p>
+                        <p class="text-dark-gray">Serving businesses across Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.</p>
                     </div >
                 </div>
             </div>
@@ -1000,14 +1208,14 @@
                             <div class="text-accent text-3xl"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <h3 class="text-xl font-semibold text-white">Email</h3>
-                                <a href="mailto:asifk199707@gmail.com" class="text-dark-gray hover:text-accent transition-colors duration-300">Asifk199707@gmail.com</a>
+                                <a href="mailto:asifk199707@gmail.com" class="text-dark-gray hover:text-accent transition-colors duration-300">asifk199707@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="text-accent text-3xl"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <h3 class="text-xl font-semibold text-white">Address</h3>
-                                <p class="text-dark-gray">Muwailih, Industrial, Sharjah, UAE</p>
+                                <p class="text-dark-gray">Muwailih Commercial, Sharjah, UAE</p> <!-- Updated to a random Muwailih address -->
                             </div>
                         </div>
                         <!-- Google Map Embed -->
@@ -1050,19 +1258,141 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-primary-dark py-10 text-center text-dark-gray border-t border-dark">
-        <div class="container mx-auto px-6">
-            <p>&copy; 2023 AI Digital Marketing In Sharjah. All rights reserved.</p>
-            <p class="mt-2">Muwailih, Industrial, Sharjah, UAE</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-accent transition-colors duration-300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-accent transition-colors duration-300" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-accent transition-colors duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="hover:text-accent transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <!-- FAQ Section with Chatbot -->
+    <section id="faq" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="section-content container mx-auto px-6">
+            <h2 class="section-title text-center mb-4 animate-on-scroll">Frequently Asked <br> Questions</h2>
+            <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                Find answers to common questions about our digital marketing and AI solutions. For more specific inquiries, use our AI chatbot!
+            </p>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- FAQ List -->
+                <div class="lg:w-1/2 card p-8 animate-on-scroll slide-left">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Common Questions</h3>
+                    <div class="space-y-4">
+                        <details class="group border-b border-dark pb-2">
+                            <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                What services does Asif Digital Marketing offer?
+                                <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="text-dark-gray mt-2 pl-4">
+                                We offer comprehensive digital marketing services including AI-powered social media marketing, WhatsApp chatbots & automation, local SEO, Google Ads, and professional WordPress website design. We serve clients across Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+                            </p>
+                        </details>
+                        <details class="group border-b border-dark pb-2">
+                            <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                How does AI benefit my business marketing?
+                                <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="text-dark-gray mt-2 pl-4">
+                                AI enhances your marketing by automating content creation, providing predictive analytics for better decision-making, streamlining marketing automation tasks, and enabling precise customer segmentation for hyper-targeted campaigns, leading to higher ROI.
+                            </p>
+                        </details>
+                        <details class="group border-b border-dark pb-2">
+                            <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                Do you offer services outside of Sharjah?
+                                <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="text-dark-gray mt-2 pl-4">
+                                Yes, while based in Sharjah, we proudly offer our full range of digital marketing and AI solutions to businesses throughout the UAE, including Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+                            </p>
+                        </details>
+                        <details class="group border-b border-dark pb-2">
+                            <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                What is the typical timeline for a website project?
+                                <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </summary>
+                            <p class="text-dark-gray mt-2 pl-4">
+                                The timeline for a website project varies based on complexity and features. A standard WordPress website can typically be completed within 3-6 weeks, from initial consultation to launch. We provide a detailed timeline after understanding your specific requirements.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Placeholder for where the chatbot was, now it's floating -->
+                <div class="lg:w-1/2 flex justify-center items-center">
+                    <p class="text-dark-gray text-center">
+                        Have more questions? Click the chat icon at the bottom right to talk to our AI assistant!
+                    </p>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark py-10 text-dark-gray border-t border-dark">
+        <div class="container mx-auto px-6 footer-grid">
+            <div class="footer-section">
+                <h3>EXPERTISE</h3>
+                <p>Empowering businesses to shine in the digital spotlight, one pixel at a time.</p>
+                <div class="footer-social-icons mt-4">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our address</h3>
+                <address class="not-italic">
+                    Muwailih Commercial,<br>
+                    Sharjah, UAE
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Shortcuts</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Asif</a></li>
+                    <li><a href="#how-we-help">Services</a></li>
+                    <li><a href="#case-studies">Portfolio</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact with us</h3>
+                <p class="mb-2">Feel free to reach out to us using the contact information below:</p>
+                <p class="mb-1"><a href="tel:+971545866094">+971 54 586 6094</a></p>
+                <p><a href="mailto:asifk199707@gmail.com">asifk199707@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="text-center mt-8 pt-4 border-t border-dark">
+            <p>&copy; 2023 Asif Digital Marketing. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Floating Chatbot Toggle Button -->
+    <div id="chatbot-toggle-button" class="chatbot-toggle-button">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Modal Overlay -->
+    <div id="chatbot-modal-overlay" class="chatbot-modal-overlay">
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <span>Asif Digital AI Assistant</span>
+                <button id="close-chatbot" class="text-white text-xl focus:outline-none">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message ai">Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?</div>
+            </div>
+            <div class="loading-indicator" id="loading-indicator" style="display: none;">Typing...</div>
+            <div class="chat-input-area">
+                <textarea id="chat-input" placeholder="Ask me anything about digital marketing..." rows="1"></textarea>
+                <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1196,6 +1526,150 @@
                     header.classList.add('header-transparent');
                 }
             });
+
+            // Hero Section Image Slider Logic
+            const heroImages = document.querySelectorAll('.hero-background-slider img');
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                heroImages[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+                heroImages[currentImageIndex].classList.add('active');
+            }
+
+            // Start the slider after a short delay to ensure initial image is visible
+            setTimeout(() => {
+                heroImages[currentImageIndex].classList.add('active'); // Ensure first image is active on load
+                setInterval(showNextImage, 5000); // Change image every 5 seconds
+            }, 1000); // Start after 1 second
+
+            // Chatbot Logic
+            const chatbotToggleButton = document.getElementById('chatbot-toggle-button');
+            const chatbotModalOverlay = document.getElementById('chatbot-modal-overlay');
+            const closeChatbotButton = document.getElementById('close-chatbot');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const sendButton = document.getElementById('send-button');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            // Add checks to ensure elements exist before adding listeners
+            if (!chatbotToggleButton || !chatbotModalOverlay || !closeChatbotButton || !chatMessages || !chatInput || !sendButton || !loadingIndicator) {
+                console.error("One or more chatbot elements not found. Chatbot functionality may be limited.");
+                // This indicates a problem in the HTML structure or IDs
+            } else {
+                // Initial message from AI, with a system instruction to encourage conversational tone
+                let chatHistory = [
+                    {
+                        role: "user",
+                        parts: [{ text: "You are a friendly and conversational AI assistant for Asif Digital Marketing. Your goal is to provide helpful information about digital marketing services, AI solutions, and answer common questions in a natural, easy-to-understand way. Avoid using markdown formatting like bolding (**), bullet points (*), or numbered lists (1., 2.) in your responses. Instead, use natural language and paragraph breaks to structure your answers. When asked 'what can you do', provide a concise, conversational overview rather than a detailed list." }]
+                    },
+                    {
+                        role: "model",
+                        parts: [{ text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }]
+                    }
+                ];
+
+                chatbotToggleButton.addEventListener('click', () => {
+                    chatbotModalOverlay.style.display = 'flex'; // Show the modal
+                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom on open
+                });
+
+                closeChatbotButton.addEventListener('click', () => {
+                    chatbotModalOverlay.style.display = 'none'; // Hide the modal
+                });
+
+                chatbotModalOverlay.addEventListener('click', (e) => {
+                    // Close if clicking outside the chatbot container
+                    if (e.target === chatbotModalOverlay) {
+                        chatbotModalOverlay.style.display = 'none';
+                    }
+                });
+
+                async function sendMessage() {
+                    const userMessageText = chatInput.value.trim();
+                    if (userMessageText === '') return;
+
+                    // Display user message
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.classList.add('chat-message', 'user');
+                    userMessageDiv.textContent = userMessageText;
+                    chatMessages.appendChild(userMessageDiv);
+
+                    // Add user message to history
+                    chatHistory.push({ role: "user", parts: [{ text: userMessageText }] });
+
+                    chatInput.value = ''; // Clear input
+                    chatInput.style.height = 'auto'; // Reset textarea height
+                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+
+                    loadingIndicator.style.display = 'block'; // Show loading indicator
+
+                    try {
+                        const payload = { contents: chatHistory };
+                        const apiKey = ""; // Canvas will provide this at runtime
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        loadingIndicator.style.display = 'none'; // Hide loading indicator
+
+                        let aiResponseText = "Sorry, I couldn't get a response. Please try again.";
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            aiResponseText = result.candidates[0].content.parts[0].text;
+
+                            // Process the AI response to remove markdown and add line breaks for display
+                            aiResponseText = aiResponseText.replace(/\*\*(.*?)\*\*/g, '$1'); // Remove bolding asterisks
+                            aiResponseText = aiResponseText.replace(/^-?\s*\*+\s*/gm, ''); // Remove list item asterisks/hyphens
+                            aiResponseText = aiResponseText.replace(/\n/g, '<br>'); // Replace newlines with <br> for display
+                        } else {
+                            console.error("Unexpected API response structure:", result);
+                        }
+
+                        // Display AI message
+                        const aiMessageDiv = document.createElement('div');
+                        aiMessageDiv.classList.add('chat-message', 'ai');
+                        aiMessageDiv.innerHTML = aiResponseText; // Use innerHTML to render <br> tags
+                        chatMessages.appendChild(aiMessageDiv);
+
+                        // Add AI message to history (store original, unformatted text for next API call)
+                        // This is important because the model should not see its own markdown formatting in subsequent turns.
+                        chatHistory.push({ role: "model", parts: [{ text: result.candidates[0].content.parts[0].text }] });
+
+                        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+                    } catch (error) {
+                        console.error('Error fetching from Gemini API:', error);
+                        loadingIndicator.style.display = 'none'; // Hide loading indicator
+
+                        const errorMessageDiv = document.createElement('div');
+                        errorMessageDiv.classList.add('chat-message', 'ai');
+                        errorMessageDiv.textContent = "Oops! Something went wrong. Please try again later.";
+                        chatMessages.appendChild(errorMessageDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                }
+
+                sendButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) { // Send on Enter, new line on Shift+Enter
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                // Auto-resize textarea
+                chatInput.addEventListener('input', () => {
+                    chatInput.style.height = 'auto';
+                    chatInput.style.height = chatInput.scrollHeight + 'px';
+                });
+            }
         });
     </script>
 </body>
