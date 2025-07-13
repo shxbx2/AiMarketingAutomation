@@ -4,8 +4,5 @@
   "description": "Serverless proxy for Hugging Face API",
   "main": "proxy.js",
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-fetch": "^2.6.1"
-  }
+  "license": "ISC"
 }
