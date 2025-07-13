@@ -201,7 +201,8 @@
         }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            /* Adjusted minmax to allow smaller items on very small screens */
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             gap: 1rem;
             margin-top: 3rem;
         }
@@ -212,6 +213,7 @@
             backdrop-filter: blur(5px); /* Frosted glass effect */
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* Removed min-width here to allow greater flexibility */
         }
         .stat-number {
             font-family: 'Poppins', sans-serif;
@@ -810,11 +812,11 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">5+</div> <!-- Updated to 5+ years -->
-                        <div class="stat-label">Years of Experience</div>
+                        <div class="stat-label text-xs sm:text-sm">Years of Experience</div> <!-- Adjusted font size for mobile -->
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">1+</div>
-                        <div class="stat-label">Awards Won</div>
+                        <div class="stat-label text-xs sm:text-sm">Awards Won</div> <!-- Adjusted font size for mobile -->
                     </div>
                 </div>
             </div>
@@ -1394,6 +1396,9 @@
         </div>
     </div>
 
+    <!-- Marked.js for Markdown parsing - Added ID and placed here for guaranteed loading order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.12/marked.min.js" id="marked-script"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Smooth scrolling for navigation links
@@ -1544,8 +1549,14 @@
                 heroImages[currentImageIndex].classList.add('active'); // Ensure first image is active on load
                 setInterval(showNextImage, 5000); // Change image every 5 seconds
             }, 1000); // Start after 1 second
+        });
 
-            // Chatbot Logic
+        // Chatbot Logic - Now waits for marked.js to load
+        const markedScript = document.getElementById('marked-script');
+
+        markedScript.onload = function() {
+            console.log("marked.js script loaded successfully."); // Debugging line
+
             const chatbotToggleButton = document.getElementById('chatbot-toggle-button');
             const chatbotModalOverlay = document.getElementById('chatbot-modal-overlay');
             const closeChatbotButton = document.getElementById('close-chatbot');
@@ -1561,20 +1572,21 @@
             } else {
                 // Initial message from AI, with a system instruction to encourage conversational tone
                 let chatHistory = [
-                    { role: "ai", text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }
+                    { role: "ai", content: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }
                 ];
 
                 // Function to add messages to the chat display
                 function addMessageToChat(message, sender) {
                     const messageDiv = document.createElement('div');
                     messageDiv.classList.add('chat-message', sender);
-                    messageDiv.innerHTML = message; // Use innerHTML for potential <br> tags
+                    // Use marked.parse to convert Markdown to HTML
+                    messageDiv.innerHTML = marked.parse(message);
                     chatMessages.appendChild(messageDiv);
                     chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
                 }
 
                 // Display initial AI message
-                addMessageToChat(chatHistory[0].text, chatHistory[0].role);
+                addMessageToChat(chatHistory[0].content, chatHistory[0].role);
 
                 chatbotToggleButton.addEventListener('click', () => {
                     console.log("Chatbot toggle button clicked!"); // Added for debugging
@@ -1609,12 +1621,18 @@
                     const proxyUrl = '/.netlify/functions/proxy';
 
                     try {
+                        // Add user message to chat history for context
+                        chatHistory.push({ role: "user", content: userMessageText });
+
                         const response = await fetch(proxyUrl, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
                             },
-                            body: JSON.stringify({ message: userMessageText }) // Send the user's message to your proxy
+                            body: JSON.stringify({
+                                message: userMessageText,
+                                chatHistory: chatHistory // Send the full chat history
+                            })
                         });
 
                         const result = await response.json();
@@ -1626,6 +1644,7 @@
                         if (response.ok) { // Check if the proxy call was successful (status 200-299)
                             if (result.response) {
                                 aiResponseText = result.response; // Get the AI response from your proxy's response
+                                chatHistory.push({ role: "ai", content: aiResponseText }); // Add AI response to history
                             } else if (result.error) {
                                 aiResponseText = `Proxy Error: ${result.error}`;
                                 console.error("Proxy returned an error:", result.error);
@@ -1658,8 +1677,7 @@
                     chatInput.style.height = chatInput.scrollHeight + 'px';
                 });
             }
-        });
+        };
     </script>
 </body>
 </html>
-```
