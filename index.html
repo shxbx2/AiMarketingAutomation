@@ -1393,7 +1393,7 @@
                 <button id="close-chatbot" class="text-white text-xl focus:outline-none">&times;</button>
             </div>
             <div class="chat-messages" id="chat-messages">
-                <div class="chat-message ai">Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?</div>
+                <!-- Initial AI message will be dynamically added by JS -->
             </div>
             <div class="loading-indicator" id="loading-indicator" style="display: none;">Typing...</div>
             <div class="chat-input-area">
@@ -1570,7 +1570,7 @@
             } else {
                 // Initial message from AI, with a system instruction to encourage conversational tone
                 let chatHistory = [
-                    { role: "ai", text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }
+                    { role: "ai", text: "Welcome to AI marketing Automation" } // Changed initial message here
                 ];
 
                 // Function to add messages to the chat display
