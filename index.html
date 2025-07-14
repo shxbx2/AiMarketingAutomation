@@ -114,6 +114,10 @@
     }
     </script>
 
+    <!-- Preload critical fonts for better performance (FOIT prevention) -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCzLExudELw.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCOgGWKxytMGFKzWTzPxEE.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter for general text, Poppins for headings, and Playfair Display for luxury font effect -->
@@ -316,8 +320,8 @@
         }
         .stats-grid {
             display: grid;
-            /* Adjusted minmax to allow slightly larger items on very small screens */
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Changed from 120px to 100px */
+            /* Adjusted minmax to allow enough space for text on PC view */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Increased minmax from 100px to 150px */
             gap: 1rem;
             margin-top: 3rem;
         }
@@ -914,10 +918,10 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-background-slider">
-                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" width="1260" height="750" fetchpriority="high" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
             </div>
             <div class="hero-content">
                 <h1 class="hero-title font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
@@ -1030,7 +1034,7 @@
         <!-- AI-Powered Solutions Section -->
         <section id="ai-solutions" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6">
-                <h2 class="section-title text-center mb-4 animate-on-scroll">Our AI-Powered Solutions</h2>
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Our <br> AI-Powered Solutions</h2>
                 <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
                     Leverage the power of Artificial Intelligence to revolutionize your marketing efforts. Our AI solutions drive efficiency, personalization, and superior results.
                 </p>
