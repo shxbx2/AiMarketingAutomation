@@ -22,22 +22,7 @@
     <meta name="twitter:title" content="AI Digital Marketing & Website Design in UAE | Asif Digital">
     <meta name="twitter:description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services.">
     <meta name="twitter:image" content="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
-
-    <!-- Google Site Verification Tag (from your provided file) -->
     <meta name="google-site-verification" content="gNKh66x9SbEGo3_4CUEs__gV_8Q-FH5cfy7x8MAoDuc" />
-    <!-- Google tag (gtag.js) - Google Analytics (from your provided file) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4NWVV2VKM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-X4NWVV2VKM');
-    </script>
-    <!-- Canonical Tag for SEO -->
-    <link rel="canonical" href="https://aimarketingautomations.netlify.app/">
-    <!-- Robots Meta Tag (as a fallback/reinforcement for robots.txt) -->
-    <meta name="robots" content="index, follow">
 
     <!-- Structured Data: LocalBusiness Schema Markup -->
     <script type="application/ld+json">
@@ -113,10 +98,6 @@
       ]
     }
     </script>
-
-    <!-- Preload critical fonts for better performance (FOIT prevention) -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCzLExudELw.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCOgGWKxytMGFKzWTzPxEE.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -287,12 +268,7 @@
             margin-bottom: 1rem;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             /* Responsive font sizes */
-            font-size: 2.5rem; /* Adjusted for smaller screens to prevent corping */
-        }
-        @media (min-width: 480px) { /* Custom breakpoint for slightly larger mobile phones */
-            .hero-title {
-                font-size: 3.5rem;
-            }
+            font-size: 3rem; /* Default for small screens */
         }
         @media (min-width: 768px) { /* md breakpoint */
             .hero-title {
@@ -313,15 +289,10 @@
             margin-left: auto;
             margin-right: auto;
         }
-        @media (max-width: 480px) { /* Adjust subtitle for very small screens */
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-        }
         .stats-grid {
             display: grid;
-            /* Adjusted minmax to allow enough space for text on PC view */
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Increased minmax from 100px to 150px */
+            /* Adjusted minmax to allow slightly larger items on very small screens */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Changed from 120px to 100px */
             gap: 1rem;
             margin-top: 3rem;
         }
@@ -394,11 +365,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
-        }
-        @media (max-width: 640px) { /* Adjust section titles for mobile */
-            .section-title {
-                font-size: 2.5rem;
-            }
         }
 
         /* Card styles for services/features - Adjusted for 4 columns on larger screens */
@@ -870,7 +836,7 @@
     <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-30 header-transparent min-h-16">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl md:text-2xl font-bold text-white">AI Digital Marketing In UAE</a>
+            <a href="#" class="text-xl md:text-2xl font-bold text-white">AI Digital Marketing In UAE</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#home" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Home</a>
                 <a href="#welcome" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Welcome</a>
@@ -918,13 +884,13 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-background-slider">
-                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" width="1260" height="750" fetchpriority="high" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" width="1260" height="750" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
             </div>
             <div class="hero-content">
-                <h1 class="hero-title font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
+                <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
                     UAE DIGITAL GROWTH
                 </h1>
                 <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.4s;">
@@ -1034,7 +1000,7 @@
         <!-- AI-Powered Solutions Section -->
         <section id="ai-solutions" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6">
-                <h2 class="section-title text-center mb-4 animate-on-scroll">Our <br> AI-Powered Solutions</h2>
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Our AI-Powered Solutions</h2>
                 <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
                     Leverage the power of Artificial Intelligence to revolutionize your marketing efforts. Our AI solutions drive efficiency, personalization, and superior results.
                 </p>
@@ -1090,7 +1056,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- Case Study 1 -->
                     <div class="case-study-card animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="E-commerce Sales Growth" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>E-commerce Sales Boost</h3>
                             <p>
@@ -1102,7 +1068,7 @@
 
                     <!-- Case Study 2 -->
                     <div class="case-study-card animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="B2B Lead Generation Success" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="B2B Lead Generation Success" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Lead Generation for B2B</h3>
                             <p>
@@ -1114,7 +1080,7 @@
 
                     <!-- Case Study 3 -->
                     <div class="case-study-card animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Brand Awareness Campaign Impact" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Impact" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Brand Awareness Campaign</h3>
                             <p>
@@ -1126,7 +1092,7 @@
 
                     <!-- Case Study 4: New Case Study -->
                     <div class="case-study-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
-                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Local Service Business Growth" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Local Service Business Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Local Service Business Growth</h3>
                             <p>
@@ -1230,28 +1196,28 @@
                 <h2 class="section-title text-center mb-12 animate-on-scroll">Our Digital <br> Marketing Portfolio</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <div class="portfolio-item animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Social Media Campaign for Cafe" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
+                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Social Media Campaign for Cafe" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
                         <div class="portfolio-item-content">
                             <h3>Social Media Campaign</h3>
                             <p>Engaging content strategy for a local cafe, boosting online presence and customer interaction.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="SEO Optimization for Automotive" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
+                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="SEO Optimization for Automotive" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
                         <div class="portfolio-item-content">
                             <h3>SEO Optimization</h3>
                             <p>Improved search rankings for an automotive service, driving more local traffic and inquiries.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Chatbot Implementation for Retail" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
+                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chatbot Implementation for Retail" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
                         <div class="portfolio-item-content">
                             <h3>Chatbot Implementation</h3>
                             <p>Automated customer support for a retail store, enhancing user experience and reducing response times.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll slide-right" style="animation-delay: 0.3s;">
-                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Google Ads Management for Clinic" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
+                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Ads Management for Clinic" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
                         <div class="portfolio-item-content">
                             <h3>Google Ads Management</h3>
                             <p>High-ROI ad campaigns for a local clinic, significantly increasing patient appointments.</p>
@@ -1281,7 +1247,7 @@
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-on-scroll slide-right">
                     <!-- Using a professional digital marketer image for the About section -->
-                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&height=750" alt="Asif Digital Marketing Expert" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" loading="lazy" width="1260" height="750" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
+                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asif Digital Marketing Expert" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
                 </div>
             </div>
         </section>
