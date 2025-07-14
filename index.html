@@ -9,6 +9,95 @@
     <meta name="description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services. Local SEO, WhatsApp chatbots, and more for SMEs in UAE.">
     <!-- SEO Optimization: Meta Keywords -->
     <meta name="keywords" content="Sharjah digital marketing, Dubai digital marketing, Abu Dhabi digital marketing, Ajman digital marketing, Ras Al Khaimah digital marketing, AI automation UAE, social media management UAE, local SEO UAE, WhatsApp chatbots UAE, digital marketing services UAE, small business marketing UAE, AI marketing solutions UAE, social media agency UAE, online advertising UAE, WordPress website design UAE">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="AI Digital Marketing & Website Design in UAE | Asif Digital">
+    <meta property="og:description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services.">
+    <meta property="og:image" content="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <meta property="og:url" content="https://aimarketingautomations.netlify.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags for Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Digital Marketing & Website Design in UAE | Asif Digital">
+    <meta name="twitter:description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+
+    <!-- Structured Data: LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Asif Digital Marketing",
+      "image": "https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Muwailih Commercial",
+        "addressLocality": "Sharjah",
+        "addressRegion": "Sharjah",
+        "addressCountry": "AE"
+      },
+      "telephone": "+971545866094",
+      "email": "mailto:asifk199707@gmail.com",
+      "url": "https://aimarketingautomations.netlify.app/",
+      "priceRange": "AED",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "AI-Powered Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WhatsApp Chatbots & Automation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI-Powered Lead Follow-up"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Content Generation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Predictive Analytics & Personalization"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Intelligent Marketing Automation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI-Driven Customer Segmentation"}}
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "General Digital Marketing Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Content & Ads"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Local SEO & Google Ads"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WordPress Website Design"}}
+            ]
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "26"
+      },
+      "description": "Asif Digital Marketing offers expert AI-powered digital marketing, social media management, and automation services in UAE, including Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah. Specializing in local SEO, WhatsApp chatbots, and comprehensive digital strategies for SMEs.",
+      "sameAs": [
+        "https://www.facebook.com/yourprofile",
+        "https://twitter.com/yourprofile",
+        "https://www.linkedin.com/in/yourprofile",
+        "https://www.instagram.com/yourprofile"
+      ]
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter for general text, Poppins for headings, and Playfair Display for luxury font effect -->
@@ -201,7 +290,8 @@
         }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            /* Adjusted minmax to allow slightly larger items on very small screens */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Changed from 120px to 100px */
             gap: 1rem;
             margin-top: 3rem;
         }
@@ -228,6 +318,13 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+        /* Ensure stat labels are readable on small screens */
+        @media (max-width: 640px) { /* Tailwind's 'sm' breakpoint */
+            .stat-label {
+                font-size: 0.8rem; /* Slightly smaller for very small screens if needed */
+            }
+        }
+
 
         /* Header specific styles to match SparkleAp */
         .header-transparent {
@@ -628,7 +725,8 @@
             max-width: 80%;
             padding: 0.75rem 1rem;
             border-radius: 1rem;
-            line-height: 1.4;
+            line-height: 1.6; /* Adjusted line height for better readability */
+            word-break: break-word; /* Ensure long words break and wrap */
         }
 
         .chat-message.user {
@@ -785,10 +883,10 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-background-slider">
-                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
             </div>
             <div class="hero-content">
                 <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
@@ -901,7 +999,7 @@
         <!-- AI-Powered Solutions Section -->
         <section id="ai-solutions" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <div class="section-content container mx-auto px-6">
-                <h2 class="section-title text-center mb-4 animate-on-scroll">Our <br> AI-Powered Solutions</h2>
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Our AI-Powered Solutions</h2>
                 <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
                     Leverage the power of Artificial Intelligence to revolutionize your marketing efforts. Our AI solutions drive efficiency, personalization, and superior results.
                 </p>
@@ -957,7 +1055,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <!-- Case Study 1 -->
                     <div class="case-study-card animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Growth" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>E-commerce Sales Boost</h3>
                             <p>
@@ -969,7 +1067,7 @@
 
                     <!-- Case Study 2 -->
                     <div class="case-study-card animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="B2B Lead Generation Success" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="B2B Lead Generation Success" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Lead Generation for B2B</h3>
                             <p>
@@ -981,7 +1079,7 @@
 
                     <!-- Case Study 3 -->
                     <div class="case-study-card animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Impact" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Impact" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Brand Awareness Campaign</h3>
                             <p>
@@ -993,7 +1091,7 @@
 
                     <!-- Case Study 4: New Case Study -->
                     <div class="case-study-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
-                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Local Service Business Growth" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Local Service Business Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
                         <div class="case-study-card-content">
                             <h3>Local Service Business Growth</h3>
                             <p>
@@ -1097,28 +1195,28 @@
                 <h2 class="section-title text-center mb-12 animate-on-scroll">Our Digital <br> Marketing Portfolio</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
                     <div class="portfolio-item animate-on-scroll slide-left">
-                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Social Media Campaign for Cafe" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
+                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Social Media Campaign for Cafe" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
                         <div class="portfolio-item-content">
                             <h3>Social Media Campaign</h3>
                             <p>Engaging content strategy for a local cafe, boosting online presence and customer interaction.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll">
-                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="SEO Optimization for Automotive" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
+                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="SEO Optimization for Automotive" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
                         <div class="portfolio-item-content">
                             <h3>SEO Optimization</h3>
                             <p>Improved search rankings for an automotive service, driving more local traffic and inquiries.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll slide-right">
-                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chatbot Implementation for Retail" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
+                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chatbot Implementation for Retail" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
                         <div class="portfolio-item-content">
                             <h3>Chatbot Implementation</h3>
                             <p>Automated customer support for a retail store, enhancing user experience and reducing response times.</p>
                         </div>
                     </div>
                     <div class="portfolio-item animate-on-scroll slide-right" style="animation-delay: 0.3s;">
-                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Ads Management for Clinic" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
+                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Ads Management for Clinic" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
                         <div class="portfolio-item-content">
                             <h3>Google Ads Management</h3>
                             <p>High-ROI ad campaigns for a local clinic, significantly increasing patient appointments.</p>
@@ -1148,7 +1246,7 @@
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-on-scroll slide-right">
                     <!-- Using a professional digital marketer image for the About section -->
-                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asif Digital Marketing Expert" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
+                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asif Digital Marketing Expert" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
                 </div>
             </div>
         </section>
@@ -1215,7 +1313,8 @@
                             <div class="text-accent text-3xl"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <h3 class="text-xl font-semibold text-white">Address</h3>
-                                <p class="text-dark-gray">Muwailih Commercial, Sharjah, UAE</p> <!-- Updated to a random Muwailih address -->
+                                <p class="text-dark-gray">Muwailih Commercial,<br>
+                                Sharjah, UAE</p> <!-- Updated to a random Muwailih address -->
                             </div>
                         </div>
                         <!-- Google Map Embed -->
@@ -1335,10 +1434,10 @@
                 <h3>EXPERTISE</h3>
                 <p>Empowering businesses to shine in the digital spotlight, one pixel at a time.</p>
                 <div class="footer-social-icons mt-4">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/yourprofile" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourprofile" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourprofile" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -1384,7 +1483,7 @@
                 <button id="close-chatbot" class="text-white text-xl focus:outline-none">&times;</button>
             </div>
             <div class="chat-messages" id="chat-messages">
-                <div class="chat-message ai">Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?</div>
+                <!-- Initial AI message will be dynamically added by JS -->
             </div>
             <div class="loading-indicator" id="loading-indicator" style="display: none;">Typing...</div>
             <div class="chat-input-area">
@@ -1561,7 +1660,7 @@
             } else {
                 // Initial message from AI, with a system instruction to encourage conversational tone
                 let chatHistory = [
-                    { role: "ai", text: "Hello! I'm your AI assistant. How can I help you with your digital marketing needs today?" }
+                    { role: "ai", text: "Welcome! I'm your AI assistant from Asif Digital Marketing. How can I assist you with your digital marketing needs today?" } // Updated welcome message
                 ];
 
                 // Function to add messages to the chat display
@@ -1662,4 +1761,3 @@
     </script>
 </body>
 </html>
-```
