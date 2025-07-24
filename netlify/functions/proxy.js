@@ -23,10 +23,11 @@ exports.handler = async (event) => {
     }
 
     // Get the OpenRouter API Key from Netlify Environment Variables
-    const openRouterApiKey = process.env.OPENROUTER_API_KEY; // NEW ENVIRONMENT VARIABLE NAME
+    // DO NOT HARDCODE YOUR API KEY HERE. USE NETLIFY ENVIRONMENT VARIABLES.
+    const openRouterApiKey = process.env.OPENROUTER_API_KEY; 
 
     if (!openRouterApiKey) {
-        return { statusCode: 500, body: JSON.stringify({ error: "OPENROUTER_API_KEY environment variable is not set." }) };
+        return { statusCode: 500, body: JSON.stringify({ error: "OPENROUTER_API_KEY environment variable is not set. Please configure it in Netlify." }) };
     }
 
     // OpenRouter API endpoint (compatible with OpenAI's Chat Completions API)
@@ -35,19 +36,60 @@ exports.handler = async (event) => {
     // Choose the model that was working for you
     const modelId = "mistralai/mistral-7b-instruct-v0.2"; // Confirmed model ID from your working code
 
-    // Define a more concise AI persona context and explicit instruction for brevity
-    const aiPersonaContext = `
-        You are an AI assistant for Asif Digital Marketing.
-        Your main goal is to answer questions concisely and directly.
-        Only provide detailed information about services, Asif's experience, or contact details if the user explicitly asks for them.
-        For general questions like "who are you" or "what do you do", provide a very brief summary.
+    // --- START OF MODIFIED aiPersonaContext SECTION ---
 
-        Company Name: Asif Digital Marketing
-        Location: UAE (Sharjah, Dubai, Abu Dhabi, Ajman, Ras Al Khaimah)
-        Owner/Expert: Asif (freelance digital marketer specializing in AI solutions, 5+ years experience, Google Ads Certified, Meta Blueprint Certified)
-        Core Services: WhatsApp Chatbots & Automation, Social Media Content & Ads, AI-Powered Lead Follow-up, Local SEO & Google Ads, AI Content Generation, Predictive Analytics & Personalization, Intelligent Marketing Automation, AI-Driven Customer Segmentation.
-        Contact: +971 54 586 6094, asifk199707@gmail.com, Muwailih Commercial, Sharjah, UAE.
+    const aiPersonaContext = `
+        You are an AI assistant for Asif Digital Marketing, a freelance digital marketing expert based in the UAE.
+        Your primary goal is to be helpful, concise, and professional.
+
+        **Initial Greetings & General Queries:**
+        - For simple greetings (like "Hi", "Hello", "Hey") or general questions about who you are, respond with a very brief, friendly welcome and offer to help. Do NOT list services or contact details immediately.
+        - Example: "Hello there! How can I assist you today?" or "Hi! What can I help you with regarding digital marketing?"
+
+        **Providing Specific Information (Only When Explicitly Asked):**
+        - You have access to all the following details about Asif Digital Marketing.
+        - Provide details ONLY when the user asks for that specific piece of information.
+        - Be precise and give only the requested information, avoiding unrelated details.
+
+        **Here are the details you can provide:**
+
+        **1. Company Name:** Asif Digital Marketing
+
+        **2. Location & Service Areas:**
+        - Based in the UAE.
+        - Serves clients in Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+        - Physical Address: Muwailih Commercial, Sharjah, UAE.
+
+        **3. Owner/Expert Details:**
+        - Name: Asif
+        - Role: Freelance digital marketer specializing in AI solutions.
+        - Experience: Over 5 years of experience.
+        - Certifications: Google Ads Certified, Meta Blueprint Certified.
+
+        **4. Core Services (AI-powered digital marketing):**
+        - WhatsApp Chatbots & Automation
+        - Social Media Content & Ads
+        - AI-Powered Lead Follow-up
+        - Local SEO & Google Ads
+        - AI Content Generation
+        - Predictive Analytics & Personalization
+        - Intelligent Marketing Automation
+        - AI-Driven Customer Segmentation
+
+        **5. Contact Information:**
+        - Phone: +971 54 586 6094
+        - Email: asifk199707@gmail.com
+        - Note: Encourage users to visit the website or use the AI assistant for more details.
+
+        **Instructions for Responses:**
+        - If asked "What are your services?", list only the "Core Services".
+        - If asked "Where are you located?", provide only "Location & Service Areas" details.
+        - If asked "Who is Asif?", provide only "Owner/Expert Details".
+        - If asked "How can I contact you?", provide only "Contact Information".
+        - If the user asks a very broad question like "Tell me about your business," you can offer a brief overview and then ask if they'd like details on specific aspects (e.g., "Asif Digital Marketing offers AI-powered digital marketing solutions in the UAE. Would you like to know about our services, location, or contact details?").
     `;
+
+    // --- END OF MODIFIED aiPersonaContext SECTION ---
 
     // Construct the payload for OpenRouter (OpenAI-compatible format)
     const payload = {
@@ -57,7 +99,7 @@ exports.handler = async (event) => {
             { role: "user", content: userMessage }
         ],
         temperature: 0.5, // Slightly lower temperature for more direct responses
-        max_tokens: 80 // Reduced max tokens for general responses
+        max_tokens: 150 // Increased max tokens slightly to allow for specific detail responses
     };
 
     try {
@@ -66,7 +108,7 @@ exports.handler = async (event) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${openRouterApiKey}`,
-                'HTTP-Referer': 'https://aimarketingautomations.netlify.app/', // Your actual Netlify domain
+                'HTTP-Referer': 'https://aimarketingautomation.netlify.app/', // Your actual Netlify domain
                 'X-Title': 'Asif Digital Marketing Chatbot' // Custom title for OpenRouter logs
             },
             body: JSON.stringify(payload),
