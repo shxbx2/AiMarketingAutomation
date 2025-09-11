@@ -39,7 +39,7 @@ exports.handler = async (event) => {
 
     // 5. Define API and Model Configuration
     const openRouterApiUrl = "https://openrouter.ai/api/v1/chat/completions";
-    const modelId = "google/gemini-pro";
+    const modelId = "gemini-flash-1.5";
 
     // 6. Engineer the System Prompt for High-Quality Ad Copy
     // This is the core instruction given to the AI model.
