@@ -223,13 +223,14 @@
         /* Hero Section Styling */
         .hero-section {
             position: relative;
-            height: 100vh;
+            min-height: 100vh; /* CHANGED: ensures it's at least full height but can grow */
+            height: auto; /* CHANGED: allows the section to fit its content */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             overflow: hidden; /* Crucial for image slider */
-            padding-top: 120px;
+            padding: 120px 0 60px; /* CHANGED: Added padding-top and bottom */
         }
         .hero-background-slider {
             position: absolute;
@@ -280,16 +281,16 @@
             margin-bottom: 1rem;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             /* Responsive font sizes */
-            font-size: 3rem; /* Default for small screens */
+            font-size: 2.5rem; /* CHANGED: Reduced from 3rem */
         }
         @media (min-width: 768px) { /* md breakpoint */
             .hero-title {
-                font-size: 4.5rem;
+                font-size: 3.5rem; /* CHANGED: Reduced from 4.5rem */
             }
         }
         @media (min-width: 1024px) { /* lg breakpoint */
             .hero-title {
-                font-size: 5.5rem; /* Slightly larger for desktop */
+                font-size: 4.5rem; /* CHANGED: Reduced from 5.5rem */
             }
         }
 
@@ -306,7 +307,7 @@
             /* Adjusted minmax to allow slightly larger items on very small screens */
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Changed from 120px to 100px */
             gap: 1rem;
-            margin-top: 3rem;
+            margin-top: 2rem; /* CHANGED: Reduced from 3rem */
         }
         .stat-item {
             background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent background */
@@ -1914,4 +1915,5 @@
     </script>
 </body>
 </html>
+
 
