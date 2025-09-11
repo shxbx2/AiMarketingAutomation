@@ -3,7 +3,7 @@
 // ... (keep the top part of the file as is)
 
 // Choose the model that was working for you
-const modelId = "google/gemini-pro"; // <-- UPDATED MODEL
+const modelId = "gemini-flash-1.5"; // <-- UPDATED MODEL
 
 // --- START OF REVISED aiPersonaContext SECTION ---
 
