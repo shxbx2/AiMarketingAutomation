@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Optimization: Focused Title Tag -->
     <title>AI Digital Marketing Expert in Sharjah & Dubai | Asif Digital</title>
     <!-- SEO Optimization: Action-Oriented Meta Description -->
@@ -368,6 +368,19 @@
         .header-nav-link:hover::after {
             width: 100%;
         }
+
+        /* LOGO RESPONSIVENESS FIX */
+        .logo-title {
+            font-size: 1.25rem; /* Corresponds to text-xl */
+        }
+
+        @media (max-width: 1200px) and (min-width: 1024px) {
+            .logo-title {
+                font-size: 1rem; /* Adjust to prevent wrapping on medium-large screens */
+            }
+        }
+        /* END LOGO FIX */
+
 
         /* Section titles */
         .section-title {
@@ -848,7 +861,7 @@
     <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-30 header-transparent min-h-16">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-bold text-white">AI Digital Marketing & Graphics Design In Sharjah</a>
+            <a href="#" class="logo-title font-bold text-white">AI Digital Marketing & Graphics Design In Sharjah</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#home" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Home</a>
                 <a href="#welcome" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Welcome</a>
@@ -900,10 +913,10 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-background-slider">
-                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern city skyline at night" class="active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract digital tech background" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dubai city skyline" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
-                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="AI data concept" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern office with computer monitors showing data analytics" class="active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Digital marketing strategy session with charts" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stunning view of the Dubai city skyline at night" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract representation of artificial intelligence data network" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
             </div>
             <div class="hero-content">
                 <h1 class="hero-title text-4xl md:text-7xl lg:text-12xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
@@ -1570,6 +1583,10 @@
                     e.preventDefault();
 
                     const targetId = this.getAttribute('href');
+                    if (targetId === '#') { // Prevent error for placeholder blog link
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
@@ -1897,5 +1914,4 @@
     </script>
 </body>
 </html>
-
 
