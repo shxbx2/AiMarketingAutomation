@@ -1,57 +1,1920 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#welcome</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#how-we-help</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#ai-solutions</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#case-studies</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#testimonials</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#faq</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#about</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aimarketingautomations.netlify.app/#contact</loc>
-    <lastmod>2025-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization: Focused Title Tag -->
+    <title>AI Digital Marketing Expert in Sharjah & Dubai | Asif Digital</title>
+    <!-- SEO Optimization: Action-Oriented Meta Description -->
+    <meta name="description" content="Asif, a freelance AI digital marketing specialist in Sharjah, helps UAE businesses grow with local SEO, WhatsApp chatbots, and social media ads. Get your free consultation today.">
+    <!-- SEO Optimization: Meta Keywords -->
+    <meta name="keywords" content="Sharjah digital marketing, Dubai digital marketing, Abu Dhabi digital marketing, Ajman digital marketing, Ras Al Khaimah digital marketing, AI automation UAE, social media management UAE, local SEO UAE, WhatsApp chatbots UAE, digital marketing services UAE, small business marketing UAE, AI marketing solutions UAE, social media agency UAE, online advertising UAE, WordPress website design UAE">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4NWVV2VKM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X4NWVV2VKM');
+</script>
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="AI Digital Marketing & Website Design in UAE | Asif Digital">
+    <meta property="og:description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services.">
+    <meta property="og:image" content="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <meta property="og:url" content="https://aimarketingautomations.netlify.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags for Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Digital Marketing & Website Design in UAE | Asif Digital">
+    <meta name="twitter:description" content="Boost your business across Sharjah, Dubai, Abu Dhabi, Ajman & RAK with expert AI-powered digital marketing, social media management, and automation services.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <meta name="google-site-verification" content="gNKh66x9SbEGo3_4CUEs__gV_8Q-FH5cfy7x8MAoDuc" />
+
+    <!-- Structured Data: LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Asif Digital Marketing",
+      "image": "https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Muwailih Commercial",
+        "addressLocality": "Sharjah",
+        "addressRegion": "Sharjah",
+        "addressCountry": "AE"
+      },
+      "telephone": "+971545866094",
+      "email": "mailto:asifk199707@gmail.com",
+      "url": "https://aimarketingautomations.netlify.app/",
+      "priceRange": "AED",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "AI-Powered Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WhatsApp Chatbots & Automation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI-Powered Lead Follow-up"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Content Generation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Predictive Analytics & Personalization"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Intelligent Marketing Automation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI-Driven Customer Segmentation"}}
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "General Digital Marketing Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Content & Ads"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Local SEO & Google Ads"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WordPress Website Design"}}
+            ]
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "26"
+      },
+      "description": "Asif Digital Marketing offers expert AI-powered digital marketing, social media management, and automation services in UAE, including Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah. Specializing in local SEO, WhatsApp chatbots, and comprehensive digital strategies for SMEs.",
+      "sameAs": [
+        "https://www.linkedin.com/in/your-actual-linkedin-profile",
+        "https://www.instagram.com/your-actual-instagram-profile"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for general text, Poppins for headings, and Playfair Display for luxury font effect -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Tailwind Configuration for colors and fonts */
+        :root {
+            /* SparkleAp inspired colors */
+            --primary-bg: #0a0a0a; /* Very dark background */
+            --secondary-bg: #1c1c1c; /* Slightly lighter dark for cards/sections */
+            --accent-gradient-start: #7c3aed; /* Purple */
+            --accent-gradient-end: #ec4899; /* Pink */
+            --text-light: #f0f0f0; /* Light text */
+            --text-dark: #b0b0b0; /* Slightly darker text for contrast */
+            --border-color: #333333; /* For subtle borders */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Use Poppins for headings for a bolder look */
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--secondary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to right, #6d28d9, #db2777);
+        }
+
+        /* Custom utility classes based on defined colors */
+        .bg-primary-dark { background-color: var(--primary-bg); }
+        .bg-secondary-dark { background-color: var(--secondary-bg); }
+        .text-accent { color: var(--accent-color); } /* Keeping for specific text elements */
+        .text-light-gray { color: var(--text-light); }
+        .text-dark-gray { color: var(--text-dark); }
+        .border-dark { border-color: var(--border-color); }
+
+        /* Custom button style with gradient */
+        .btn-primary {
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4); /* Shadow matching gradient */
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.6);
+        }
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Card styles for services/features */
+        .card {
+            background-color: var(--secondary-bg);
+            border-radius: 1.5rem; /* More rounded corners */
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color); /* Subtle border */
+        }
+        .card:hover {
+            transform: translateY(-8px); /* More pronounced lift on hover */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Backgrounds with Overlay */
+        .section-with-bg {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            overflow: hidden; /* Ensure content doesn't spill out during animations */
+        }
+        .section-with-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Light black transparent shade */
+            z-index: 1;
+        }
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            height: 100vh; /* MODIFIED: Strict full-screen height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Crucial for image slider */
+            padding-top: 80px; /* MODIFIED: Adjust for header height */
+            padding-bottom: 20px; /* MODIFIED: Add some bottom spacing */
+        }
+        .hero-background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Behind content */
+        }
+        .hero-background-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+        }
+        .hero-background-slider img.active {
+            opacity: 1;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        /* Adjusted hero-title for responsiveness */
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            /* Responsive font sizes */
+            font-size: 3rem; /* REVERTED */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .hero-title {
+                font-size: 4.5rem; /* REVERTED */
+            }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .hero-title {
+                font-size: 5.5rem; /* REVERTED */
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stats-grid {
+            display: grid;
+            /* Adjusted minmax to allow slightly larger items on very small screens */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Changed from 120px to 100px */
+            gap: 1rem;
+            margin-top: 3rem; /* REVERTED */
+        }
+        .stat-item {
+            background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent background */
+            border-radius: 1rem;
+            padding: 1rem;
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* Ensure stat labels are readable on small screens */
+        @media (max-width: 640px) { /* Tailwind's 'sm' breakpoint */
+            .stat-label {
+                font-size: 0.8rem; /* Slightly smaller for very small screens if needed */
+            }
+        }
+
+
+        /* Header specific styles to match SparkleAp */
+        .header-transparent {
+            background-color: rgba(10, 10, 10, 0.7); /* Slightly more transparent */
+            backdrop-filter: blur(10px); /* Stronger blur effect */
+            box-shadow: none; /* No initial shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .header-scrolled {
+            background-color: var(--primary-bg); /* Solid background on scroll */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow on scroll */
+        }
+        .header-nav-link {
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+        .header-nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            transition: width 0.3s ease;
+        }
+        .header-nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* LOGO RESPONSIVENESS FIX */
+        .logo-title {
+            font-size: 1.25rem; /* Corresponds to text-xl */
+        }
+
+        @media (max-width: 1200px) and (min-width: 1024px) {
+            .logo-title {
+                font-size: 1rem; /* Adjust to prevent wrapping on medium-large screens */
+            }
+        }
+        /* END LOGO FIX */
+
+
+        /* Section titles */
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* Card styles for services/features - Adjusted for 4 columns on larger screens */
+        .grid-cols-1-md-2-lg-4 {
+            grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default for mobile */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .grid-cols-1-md-2-lg-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .grid-cols-1-md-2-lg-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns for large screens */
+            }
+        }
+
+        /* Case study card specific styling */
+        .case-study-card {
+            background-color: var(--secondary-bg);
+            border-radius: 1.5rem;
+            overflow: hidden; /* Ensures image corners are rounded with card */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+        .case-study-card img {
+            border-radius: 1.5rem 1.5rem 0 0; /* Rounded top corners only */
+            width: 100%;
+            height: 250px; /* Increased height for prominence */
+            object-fit: cover;
+        }
+        .case-study-card-content {
+            padding: 2rem;
+        }
+        .case-study-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+        .case-study-card p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .case-study-card a {
+            color: var(--accent-gradient-start); /* Use start color of gradient for links */
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .case-study-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Testimonial card styling */
+        .testimonial-card {
+            background-color: var(--secondary-bg);
+            border-radius: 1.5rem;
+            padding: 2.5rem; /* Increased padding */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-card::before {
+            content: '\201C'; /* Opening quote */
+            font-family: Georgia, serif;
+            font-size: 8rem;
+            color: rgba(124, 58, 237, 0.1); /* Light accent color */
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            z-index: 0;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-light); /* Lighter text for testimonials */
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--accent-gradient-end); /* Use end color of gradient for author */
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card .rating {
+            color: #facc15; /* Tailwind yellow-400 for stars */
+            margin-top: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Client Logo Slider Styling - NEW AND IMPROVED */
+        .client-logo-slider-container {
+            overflow: hidden; /* Hides content outside the container */
+            width: 100%;
+            padding: 2rem 0;
+            /* Using flexbox to manage the track inside */
+            display: flex;
+            justify-content: center; /* Center the track if it's smaller than container */
+            align-items: center;
+        }
+
+        .client-logo-track {
+            display: flex;
+            white-space: nowrap; /* Ensures all items stay on one line */
+            animation: scroll-logos 20s linear infinite; /* Adjusted speed to 20s (slower for more names) */
+            /* The width of this track will be determined by its content */
+            /* We explicitly duplicate content in HTML to make it wide enough for seamless loop */
+        }
+
+        .client-logo-track:hover {
+            animation-play-state: paused; /* Pause animation on hover */
+        }
+
+        .client-logo-item {
+            flex-shrink: 0; /* Prevents items from shrinking */
+            padding: 0 2rem; /* Space around each logo/name */
+            min-width: 180px; /* Ensures consistent minimum width for each item */
+            display: inline-flex; /* Use inline-flex for better centering of text within item */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo-item span {
+            font-family: 'Playfair Display', serif; /* Luxurious font */
+            font-size: 1.5rem; /* Readable size */
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4); /* Subtle color */
+            transition: color 0.3s ease;
+        }
+
+        .client-logo-item:hover span {
+            color: rgba(255, 255, 255, 0.8); /* Brighter on hover */
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            /* This value MUST be exactly the negative width of ONE full set of the unique logos */
+            /* Since we have duplicated the full set once, the total track width is 2x one set. */
+            /* So, translating by -50% of the track's total width moves exactly one set. */
+            100% { transform: translateX(-50%); }
+        }
+
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-item {
+            background-color: var(--secondary-bg);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+        .portfolio-item-content {
+            padding: 1.5rem;
+        }
+        .portfolio-item-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-item-content p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile menu specific styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 40;
+            display: none; /* Hidden by default */
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Off-screen by default */
+            width: 70%; /* Adjust as needed */
+            height: 100%;
+            background-color: var(--secondary-bg);
+            z-index: 50;
+            transition: right 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        /* Animation classes for drifting effect */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Slower transition */
+            will-change: opacity, transform; /* Optimize for animation */
+        }
+
+        /* Default slide-up (drift) animation */
+        .animate-on-scroll:not(.slide-left):not(.slide-right) {
+            transform: translateY(50px);
+        }
+        .animate-on-scroll:not(.slide-left):not(.slide-right).is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide from left animation */
+        .animate-on-scroll.slide-left {
+            transform: translateX(-100px); /* Start further left */
+        }
+        .animate-on-scroll.slide-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide from right animation */
+        .animate-on-scroll.slide-right {
+            transform: translateX(100px); /* Start further right */
+        }
+        .animate-on-scroll.slide-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Zoom in animation (for hero stats, etc.) */
+        .animate-on-scroll.zoom-in {
+            transform: scale(0.8);
+        }
+        .animate-on-scroll.zoom-in.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Hero section animations */
+        .animate-fade-in-down {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Chatbot specific styles */
+        .chatbot-toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.6);
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's on top */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chatbot-toggle-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.8);
+        }
+
+        .chatbot-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot-container {
+            background-color: var(--primary-bg);
+            border-radius: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 500px;
+            height: 80%;
+            max-height: 600px;
+            position: relative; /* For close button positioning */
+        }
+
+        .chat-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            border-radius: 1.5rem 1.5rem 0 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            line-height: 1.6; /* Adjusted line height for better readability */
+            word-break: break-word; /* Ensure long words break and wrap */
+        }
+
+        .chat-message.user {
+            background: linear-gradient(to right, #6d28d9, #ec4899); /* Purple to Pink */
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem; /* Pointy corner */
+        }
+
+        .chat-message.ai {
+            background-color: var(--secondary-bg);
+            color: var(--text-light);
+            align-self: flex-start;
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 0.25rem; /* Pointy corner */
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            gap: 0.75rem;
+        }
+
+        .chat-input-area textarea {
+            flex-grow: 1;
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-light);
+            resize: none; /* Disable manual resize */
+            min-height: 40px;
+            max-height: 120px; /* Limit height */
+            overflow-y: auto;
+        }
+
+        .chat-input-area button {
+            background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: white;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .chat-input-area button:hover {
+            opacity: 0.9;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            color: var(--text-dark);
+            font-style: italic;
+            padding: 0.5rem;
+        }
+
+        /* Footer specific styles */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .footer-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-section ul li a, .footer-section p, .footer-section address {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .footer-section ul li a:hover {
+            color: var(--accent-gradient-start);
+        }
+        .footer-social-icons a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social-icons a:hover {
+            color: var(--accent-gradient-start);
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-light-gray">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-30 header-transparent min-h-16">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="logo-title font-bold text-white">AI Digital Marketing & Graphics Design In Sharjah</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Home</a>
+                <a href="#welcome" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Welcome</a>
+                <a href="#how-we-help" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">How We Help</a>
+                <a href="#ai-solutions" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">AI Solutions</a>
+                <a href="#case-studies" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Case Studies</a>
+                <a href="#testimonials" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Testimonials</a>
+                <a href="#ai-tools" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">AI Tools</a>
+                <a href="#" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Blog</a>
+                <a href="#faq" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">FAQ</a>
+                <a href="#about" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">About Asif</a>
+                <a href="#contact" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Contact</a>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-light-gray focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="flex justify-end mb-8">
+            <button id="close-mobile-menu" class="text-light-gray focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 text-xl">
+            <a href="#home" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Home</a>
+            <a href="#welcome" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Welcome</a>
+            <a href="#how-we-help" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">How We Help</a>
+            <a href="#ai-solutions" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">AI Solutions</a>
+            <a href="#case-studies" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Case Studies</a>
+            <a href="#testimonials" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Testimonials</a>
+            <a href="#ai-tools" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">AI Tools</a>
+            <a href="#" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Blog</a>
+            <a href="#faq" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">FAQ</a>
+            <a href="#about" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">About Asif</a>
+            <a href="#contact" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background-slider">
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern office with computer monitors showing data analytics" class="active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Digital marketing strategy session with charts" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/259883/pexels-photo-259883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stunning view of the Dubai city skyline at night" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Abstract representation of artificial intelligence data network" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1260x750/1a1a1a/7c3aed?text=Image+Load+Error';">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title text-4xl md:text-7xl lg:text-12xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
+                    UAE DIGITAL GROWTH WITH AI BASED APPROACH
+                </h1>
+                <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.4s;">
+                    AI-Powered Digital Marketing & Graphics Design for Businesses Across Sharjah, Dubai and UAE.
+                </p>
+                <a href="https://wa.me/971545866094" target="_blank" class="btn-primary inline-block animate-fade-in-up" style="animation-delay: 0.6s;">Get a Free AI Marketing Consultation</a>
+
+                <div class="stats-grid mt-12 animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="260" data-suffix="+">0</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="180" data-suffix="+">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div> <!-- Updated to 5+ years -->
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome/Introduction Section -->
+        <section id="welcome" class="py-20 bg-secondary-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title mb-4 animate-on-scroll">Your Freelance Digital Marketing Expert in the UAE</h2>
+                <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Hello, I'm Asif, and I extend a warm welcome to my website. Whether you're here through a referral or discovered me on Google while searching for a freelance digital marketer in Ajman, Sharjah, Dubai, Umm Al Quwain, and all across UAE, thank you for visiting Asif Digital Marketing. I'm a leading digital marketing and web design freelancer in Ajman, Sharjah, Dubai, Umm Al Quwain, and all across UAE. I've been working in digital marketing for more than 5 years, offering Social Media Marketing, Search Engine Optimization, Website Designing, Graphics & Brand Designing, Google Ads, and Social Media Ads to help collaborate with you to elevate your businesses' digital presence and achieve your business goals.
+                </p>
+            </div>
+        </section>
+
+        <!-- Full-Service Digital Marketing Section (formerly How We Help) -->
+        <section id="how-we-help" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Full-Service <br> Digital Marketing</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    I provide strategic digital marketing solutions tailored to the unique needs of businesses across the UAE, including Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
+                    <!-- Service Card 1: WhatsApp Chatbots & Automation -->
+                    <div class="card animate-on-scroll slide-left">
+                        <div class="text-accent text-5xl mb-4"><i class="fab fa-whatsapp"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">WhatsApp Chatbots & Automation</h3>
+                        <p class="text-dark-gray mb-4">
+                            Handle customer inquiries and orders 24/7 via WhatsApp – no extra staff needed. Automate new-order notifications and answer FAQs instantly.
+                        </p>
+                        <ul class="list-none space-y-2 text-dark-gray">
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> 24/7 Customer Support</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Automated Order Processing</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Instant FAQ Responses</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 2: Social Media Content & Ads -->
+                    <div class="card animate-on-scroll">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-share-alt"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Social Media Content & Ads</h3>
+                        <p class="text-dark-gray mb-4">
+                            Eye-catching posts and targeted ads to attract customers across the UAE on Instagram, Facebook, and TikTok. We craft engaging content and manage your social presence.
+                        </p>
+                        <ul class="list-none space-y-2 text-dark-gray">
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> AI-Assisted Content Creation</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Targeted Ad Campaigns</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Community Engagement</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 3: AI-Powered Lead Follow-up -->
+                    <div class="card animate-on-scroll slide-right">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-robot"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">AI-Powered Lead Follow-up</h3>
+                        <p class="text-dark-gray mb-4">
+                            Automated follow-up messages to turn leads into clients. Send scheduled messages or emails to interested customers automatically.
+                        </p>
+                        <ul class="list-none space-y-2 text-dark-gray">
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Automated Email/SMS Sequences</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Lead Nurturing</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Conversion Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 4: Local SEO & Google Ads -->
+                    <div class="card animate-on-scroll slide-left" style="animation-delay: 0.3s;">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Local SEO & Google Ads</h3>
+                        <p class="text-dark-gray mb-4">
+                            Make your business easy to find on Google Maps and search in Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah. Optimize your Google Business Profile and run effective Google Ads campaigns.
+                        </p>
+                        <ul class="list-none space-y-2 text-dark-gray">
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Google Business Profile Optimization</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Local Keyword Targeting</li>
+                            <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Targeted PPC Campaigns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI-Powered Solutions Section -->
+        <section id="ai-solutions" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Our AI-Powered Solutions</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Leverage the power of Artificial Intelligence to revolutionize your marketing efforts. Our AI solutions drive efficiency, personalization, and superior results.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
+                    <!-- AI Service Card 1: AI-Powered Content Creation -->
+                    <div class="card animate-on-scroll slide-left">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-pen-nib"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">AI Content Generation</h3>
+                        <p class="text-dark-gray">
+                            Automate the creation of high-quality, engaging content for blogs, social media, and ads, saving time and scaling your content strategy.
+                        </p>
+                    </div>
+
+                    <!-- AI Service Card 2: Predictive Analytics & Personalization -->
+                    <div class="card animate-on-scroll zoom-in" style="animation-delay: 0.1s;">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Predictive Analytics & Personalization</h3>
+                        <p class="text-dark-gray">
+                            Utilize AI to analyze vast datasets, predict market trends, and personalize customer experiences for higher conversion rates and targeted campaigns.
+                        </p>
+                    </div>
+
+                    <!-- AI Service Card 3: Marketing Automation -->
+                    <div class="card animate-on-scroll slide-right" style="animation-delay: 0.2s;">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Intelligent Marketing Automation</h3>
+                        <p class="text-dark-gray">
+                            Streamline repetitive tasks, automate email campaigns, and optimize ad bidding with intelligent automation tools, freeing up your time.
+                        </p>
+                    </div>
+
+                    <!-- AI Service Card 4: AI-Driven Customer Segmentation -->
+                    <div class="card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">AI-Driven Customer Segmentation</h3>
+                        <p class="text-dark-gray">
+                            Segment your audience with precision using AI, allowing for hyper-targeted messaging and maximizing the impact of your marketing efforts.
+                        </p>
+                    </div >
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Marketing Case Studies Section -->
+        <section id="case-studies" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Digital Marketing <br> Case Studies</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Explore how we've helped businesses achieve remarkable growth and overcome digital challenges with our strategic solutions.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
+                    <!-- Case Study 1 -->
+                    <div class="case-study-card animate-on-scroll slide-left">
+                        <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="E-commerce Sales Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <div class="case-study-card-content">
+                            <h3>E-commerce Sales Boost</h3>
+                            <p>
+                                Increased online sales by 70% for a local fashion brand through targeted social media ads and SEO optimization.
+                            </p>
+                            <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="case-study-card animate-on-scroll">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="B2B Lead Generation Success" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <div class="case-study-card-content">
+                            <h3>Lead Generation for B2B</h3>
+                            <p>
+                                Generated over 500 qualified leads in 3 months for a B2B tech company using LinkedIn marketing and content syndication.
+                                </p>
+                            <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="case-study-card animate-on-scroll slide-right">
+                        <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Brand Awareness Campaign Impact" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <div class="case-study-card-content">
+                            <h3>Brand Awareness Campaign</h3>
+                            <p>
+                                Achieved a 150% increase in brand mentions and social media engagement for a new startup in Sharjah.
+                            </p>
+                            <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4: New Case Study -->
+                    <div class="case-study-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Local Service Business Growth" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x250/1a1a1a/7c3aed?text=Image+Load+Error';">
+                        <div class="case-study-card-content">
+                            <h3>Local Service Business Growth</h3>
+                            <p>
+                                Boosted local inquiries by 85% for a home services company through optimized Google My Business and local SEO.
+                            </p>
+                            <a href="#">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Our Clients Say Section (Testimonials) -->
+        <section id="testimonials" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">What Our <br> Clients Say</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Don't just take our word for it. Hear directly from businesses that have experienced significant growth with Asif Digital Marketing.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card animate-on-scroll slide-left">
+                        <div class="rating text-xl mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Asif Digital Marketing transformed our online presence. Their SEO strategies are top-notch, and we've seen a significant increase in organic traffic. Highly recommended!"</p>
+                        <div class="author">- Sarah M., E-commerce Manager</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="rating text-xl mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The team at Asif Digital Marketing is incredibly professional and knowledgeable. Their social media campaigns brought us new customers we never thought possible."</p>
+                        <div class="author">- Omar K., Restaurant Owner</div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card animate-on-scroll slide-right">
+                        <div class="rating text-xl mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Their AI-powered marketing solutions are truly innovative. We've seen a remarkable improvement in our ad campaign performance and lead quality since partnering with them."</p>
+                        <div class="author">- Dr. Aisha A., Clinic Director</div>
+                    </div>
+
+                    <!-- Testimonial 4: New Testimonial -->
+                    <div class="testimonial-card animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <div class="rating text-xl mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Asif's expertise in WhatsApp automation has been a game-changer for our customer service. Our response times are faster, and customer satisfaction has soared!"</p>
+                        <div class="author">- Fatima A., Retail Business Owner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Clients Section -->
+        <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6 text-center">
+                <h2 class="section-title mb-12 animate-on-scroll">Featured Clients</h2>
+                <div class="client-logo-slider-container animate-on-scroll">
+                    <div class="client-logo-track">
+                        <!-- First set of 12 brand names -->
+                        <div class="client-logo-item"><span>Highlight Technologies</span></div>
+                        <div class="client-logo-item"><span>Chainlink Labs</span></div>
+                        <div class="client-logo-item"><span>Mercury</span></div>
+                        <div class="client-logo-item"><span>LTVCo</span></div>
+                        <div class="client-logo-item"><span>Chegg</span></div>
+                        <div class="client-logo-item"><span>Drata</span></div>
+                        <div class="client-logo-item"><span>Loop Returns</span></div>
+                        <div class="client-logo-item"><span>Veridian Dynamics</span></div>
+                        <div class="client-logo-item"><span>Summit Innovations</span></div>
+                        <div class="client-logo-item"><span>Nexus Solutions</span></div>
+                        <div class="client-logo-item"><span>Evergreen Ventures</span></div>
+                        <div class="client-logo-item"><span>Catalyst Corp</span></div>
+                        <!-- Second (duplicate) set of 12 brand names for seamless looping -->
+                        <div class="client-logo-item"><span>Highlight Technologies</span></div>
+                        <div class="client-logo-item"><span>Chainlink Labs</span></div>
+                        <div class="client-logo-item"><span>Mercury</span></div>
+                        <div class="client-logo-item"><span>LTVCo</span></div>
+                        <div class="client-logo-item"><span>Chegg</span></div>
+                        <div class="client-logo-item"><span>Drata</span></div>
+                        <div class="client-logo-item"><span>Loop Returns</span></div>
+                        <div class="client-logo-item"><span>Veridian Dynamics</span></div>
+                        <div class="client-logo-item"><span>Summit Innovations</span></div>
+                        <div class="client-logo-item"><span>Nexus Solutions</span></div>
+                        <div class="client-logo-item"><span>Evergreen Ventures</span></div>
+                        <div class="client-logo-item"><span>Catalyst Corp</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Digital Marketing Portfolio Section -->
+        <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-12 animate-on-scroll">Our Digital <br> Marketing Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-cols-1-md-2-lg-4">
+                    <div class="portfolio-item animate-on-scroll slide-left">
+                        <img src="https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Social Media Campaign for Cafe" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+1';">
+                        <div class="portfolio-item-content">
+                            <h3>Social Media Campaign</h3>
+                            <p>Engaging content strategy for a local cafe, boosting online presence and customer interaction.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://images.pexels.com/photos/5926383/pexels-photo-5926383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="SEO Optimization for Automotive" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+2';">
+                        <div class="portfolio-item-content">
+                            <h3>SEO Optimization</h3>
+                            <p>Improved search rankings for an automotive service, driving more local traffic and inquiries.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll slide-right">
+                        <img src="https://images.pexels.com/photos/3184437/pexels-photo-3184437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chatbot Implementation for Retail" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+3';">
+                        <div class="portfolio-item-content">
+                            <h3>Chatbot Implementation</h3>
+                            <p>Automated customer support for a retail store, enhancing user experience and reducing response times.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-on-scroll slide-right" style="animation-delay: 0.3s;">
+                        <img src="https://images.pexels.com/photos/3184435/pexels-photo-3184435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Ads Management for Clinic" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x220/1a1a1a/7c3aed?text=Portfolio+Item+4';">
+                        <div class="portfolio-item-content">
+                            <h3>Google Ads Management</h3>
+                            <p>High-ROI ad campaigns for a local clinic, significantly increasing patient appointments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184424/pexels-photo-3184424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-on-scroll slide-left">
+                    <h2 class="section-title mb-4">About <br> Asif – UAE’s AI Marketing Expert</h2>
+                    <p class="text-lg text-dark-gray mb-6">
+                        I’m Asif, a solo digital marketer in the UAE specializing in AI solutions. I’m passionate about helping local cafes, shops, and startups in Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah automate their marketing with smart chatbots and engaging content.
+                    </p>
+                    <p class="text-lg text-dark-gray mb-6">
+                        My expertise lies in leveraging the latest AI tools and techniques to give your business a competitive edge in the evolving digital landscape. I constantly adapt to ensure your strategies are always effective and deliver measurable results.
+                    </p>
+                    <p class="text-lg text-dark-gray">
+                        I believe in transparency, direct communication, and a client-centric approach, ensuring you are always informed and involved in every step of your digital journey. Your success is my priority.
+                    </p>
+                    <p class="text-lg text-dark-gray mt-4">
+                        <span class="font-semibold text-light-gray">Credentials:</span> Google Ads Certified, Meta Blueprint Certified, Successfully empowered 10+ local businesses.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-on-scroll slide-right">
+                    <!-- Using a professional digital marketer image for the About section -->
+                    <img src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Asif, an AI Digital Marketing Expert in Sharjah, UAE" class="rounded-xl shadow-lg max-w-full h-auto border border-dark" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/7c3aed?text=Image+Load+Error';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6 text-center">
+                <h2 class="section-title mb-6 animate-on-scroll">Why UAE <br> Businesses Trust Me</h2>
+                <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    I offer tailored strategies, a results-driven approach, and transparent communication to ensure your digital marketing efforts yield maximum return on investment.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card animate-on-scroll slide-left">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">AI Expertise</h3>
+                        <p class="text-dark-gray">Early adopter of AI marketing – get cutting-edge automation for your business.</p>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-handshake"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Affordable, One-on-One</h3>
+                        <p class="text-dark-gray">Solo consultant means personal attention at a low cost, tailored to your budget.</p>
+                    </div>
+                    <div class="card animate-on-scroll slide-right">
+                        <div class="text-accent text-5xl mb-4"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Local Focus</h3>
+                        <p class="text-dark-gray">Serving businesses across Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.</p>
+                    </div >
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Ready to <br> Grow Your Business?</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Contact me for a free consultation or demo. I'll reply within 24 hours.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2 space-y-8 animate-on-scroll slide-left">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-accent text-3xl"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Phone</h3>
+                                <a href="tel:+971545866094" class="text-dark-gray hover:text-accent transition-colors duration-300">+971 54 586 6094</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-accent text-3xl"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">WhatsApp</h3>
+                                <a href="https://wa.me/971545866094" target="_blank" class="text-dark-gray hover:text-accent transition-colors duration-300">+971 54 586 6094</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-accent text-3xl"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Email</h3>
+                                <a href="mailto:asifk199707@gmail.com" class="text-dark-gray hover:text-accent transition-colors duration-300">asifk199707@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-accent text-3xl"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Address</h3>
+                                <p class="text-dark-gray">Muwailih Commercial,<br>
+                                Sharjah, UAE</p> <!-- Updated to a random Muwailih address -->
+                            </div>
+                        </div>
+                        <!-- Google Map Embed -->
+                        <div class="w-full h-64 rounded-xl overflow-hidden border border-dark">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.877840109968!2d55.4594537!3d25.3071778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f4f4f4f4f4f%3A0x1234567890abcdef!2sMuwailih%20Commercial%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2sae!4v1678901234567!5m2!1sen!2sae"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                aria-label="Location of Asif Digital Marketing in Muwailih Commercial, Sharjah, UAE"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 w-full animate-on-scroll slide-right">
+                        <form class="card p-8" onsubmit="event.preventDefault(); window.open('https://wa.me/971545866094?text=' + encodeURIComponent('Hello Asif, I am interested in your services. My name is ' + document.getElementById('name').value + ' and my email is ' + document.getElementById('email').value + '. Message: ' + document.getElementById('message').value), '_blank');">
+                            <div class="mb-6">
+                                <label for="name" class="block text-dark-gray text-sm font-bold mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-gray-700 focus:outline-none focus:border-accent" placeholder="John Doe">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-dark-gray text-sm font-bold mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-gray-700 focus:outline-none focus:border-accent" placeholder="john.doe@example.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-dark-gray text-sm font-bold mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-gray-700 focus:outline-none focus:border-accent" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Send Message</button>
+                            <a href="https://wa.me/971545866094" target="_blank" class="btn-primary bg-green-600 hover:bg-green-700 flex items-center justify-center mt-4 w-full">
+                                <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp Directly
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Content Idea Generator Section -->
+        <section id="ai-tools" class="py-20 bg-secondary-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title mb-4 animate-on-scroll">Free AI Marketing Tools</h2>
+                <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Experience the power of AI firsthand. Use our free tools to generate engaging content ideas and high-converting ad copy for your business in the UAE.
+                </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Card 1: Content Idea Generator -->
+                    <div class="card p-8 animate-on-scroll slide-left">
+                        <h3 class="text-3xl font-bold text-white mb-4">✨ Content Idea Generator</h3>
+                        <div class="mb-4">
+                            <label for="industry-input" class="block text-dark-gray text-sm font-bold mb-2 text-left">Enter Your Business Type</label>
+                            <input type="text" id="industry-input" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-dark focus:outline-none focus:border-accent-gradient-start" placeholder="e.g., Cafe in Ajman">
+                        </div>
+                        <button id="generate-ideas-btn" class="btn-primary w-full">Generate Content Ideas</button>
+                        <div id="ideas-result" class="mt-6 text-left p-6 bg-primary-dark rounded-lg border border-dark" style="display: none;">
+                            <h4 class="text-xl font-semibold text-white mb-4">Here are some ideas for you:</h4>
+                            <div id="ideas-loading" class="text-center text-dark-gray" style="display: none;">Generating creative ideas...</div>
+                            <pre id="ideas-content" class="text-dark-gray whitespace-pre-wrap font-sans"></pre>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Ad Copy Generator (NEW) -->
+                    <div class="card p-8 animate-on-scroll slide-right">
+                        <h3 class="text-3xl font-bold text-white mb-4">✨ Ad Copy Generator</h3>
+                        <div class="mb-4">
+                            <label for="ad-product-input" class="block text-dark-gray text-sm font-bold mb-2 text-left">Product/Service Name</label>
+                            <input type="text" id="ad-product-input" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-dark focus:outline-none focus:border-accent-gradient-start" placeholder="e.g., Premium Karak Chai">
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-audience-input" class="block text-dark-gray text-sm font-bold mb-2 text-left">Target Audience</label>
+                            <input type="text" id="ad-audience-input" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-dark focus:outline-none focus:border-accent-gradient-start" placeholder="e.g., Young professionals in Dubai">
+                        </div>
+                        <div class="mb-4">
+                            <label for="ad-platform-select" class="block text-dark-gray text-sm font-bold mb-2 text-left">Ad Platform</label>
+                            <select id="ad-platform-select" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-dark focus:outline-none focus:border-accent-gradient-start text-light-gray">
+                                <option value="Facebook/Instagram">Facebook / Instagram</option>
+                                <option value="Google Ads">Google Ads</option>
+                            </select>
+                        </div>
+                        <button id="generate-ad-copy-btn" class="btn-primary w-full">Generate Ad Copy</button>
+                        <div id="ad-copy-result" class="mt-6 text-left p-6 bg-primary-dark rounded-lg border border-dark" style="display: none;">
+                            <h4 class="text-xl font-semibold text-white mb-4">Generated Ad Copy:</h4>
+                            <div id="ad-copy-loading" class="text-center text-dark-gray" style="display: none;">Writing compelling ad copy...</div>
+                            <pre id="ad-copy-content" class="text-dark-gray whitespace-pre-wrap font-sans"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6">
+                <h2 class="section-title text-center mb-4 animate-on-scroll">Frequently Asked <br> Questions</h2>
+                <p class="text-lg text-dark-gray text-center mb-12 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Find answers to common questions about our digital marketing and AI solutions. For more specific inquiries, use our AI chatbot!
+                </p>
+
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- FAQ List -->
+                    <div class="lg:w-1/2 card p-8 animate-on-scroll slide-left">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Common Questions</h3>
+                        <div class="space-y-4">
+                            <details class="group border-b border-dark pb-2">
+                                <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                    What services does Asif Digital Marketing offer?
+                                    <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </summary>
+                                <p class="text-dark-gray mt-2 pl-4">
+                                    We offer comprehensive digital marketing services including AI-powered social media marketing, WhatsApp chatbots & automation, local SEO, Google Ads, and professional WordPress website design. We serve clients across Sharjah, Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+                                </p>
+                            </details>
+                            <details class="group border-b border-dark pb-2">
+                                <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                    How does AI benefit my business marketing?
+                                    <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </summary>
+                                <p class="text-dark-gray mt-2 pl-4">
+                                    AI enhances your marketing by automating content creation, providing predictive analytics for better decision-making, streamlining marketing automation tasks, and enabling precise customer segmentation for hyper-targeted campaigns, leading to higher ROI.
+                                </p>
+                            </details>
+                            <details class="group border-b border-dark pb-2">
+                                <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                    Do you offer services outside of Sharjah?
+                                    <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </summary>
+                                <p class="text-dark-gray mt-2 pl-4">
+                                    Yes, while based in Sharjah, we proudly offer our full range of digital marketing and AI solutions to businesses throughout the UAE, including Dubai, Abu Dhabi, Ajman, and Ras Al Khaimah.
+                                </p>
+                            </details>
+                            <details class="group border-b border-dark pb-2">
+                                <summary class="flex justify-between items-center cursor-pointer text-light-gray font-medium text-lg">
+                                    What is the typical timeline for a website project?
+                                    <span class="transform transition-transform duration-200 group-open:rotate-180">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </summary>
+                                <p class="text-dark-gray mt-2 pl-4">
+                                    The timeline for a website project varies based on complexity and features. A standard WordPress website can typically be completed within 3-6 weeks, from initial consultation to launch. We provide a detailed timeline after understanding your specific requirements.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for where the chatbot was, now it's floating -->
+                    <div class="lg:w-1/2 flex justify-center items-center">
+                        <p class="text-dark-gray text-center">
+                            Have more questions? Click the chat icon at the bottom right to talk to our AI assistant!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark py-10 text-dark-gray border-t border-dark">
+        <div class="container mx-auto px-6 footer-grid">
+            <div class="footer-section">
+                <h3>EXPERTISE</h3>
+                <p>Empowering businesses to shine in the digital spotlight, one pixel at a time.</p>
+                <div class="footer-social-icons mt-4">
+                    <a href="https://www.facebook.com/yourprofile" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourprofile" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourprofile" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our address</h3>
+                <address class="not-italic">
+                    Muwailih Commercial,<br>
+                    Sharjah, UAE
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Shortcuts</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Asif</a></li>
+                    <li><a href="#how-we-help">Services</a></li>
+                    <li><a href="#case-studies">Portfolio</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact with us</h3>
+                <p class="mb-2">Feel free to reach out to us using the contact information below:</p>
+                <p class="mb-1"><a href="tel:+971545866094">+971 54 586 6094</a></p>
+                <p><a href="mailto:asifk199707@gmail.com">asifk199707@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="text-center mt-8 pt-4 border-t border-dark">
+            <p>&copy; 2023 Asif Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot Toggle Button -->
+    <div id="chatbot-toggle-button" class="chatbot-toggle-button">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Modal Overlay -->
+    <div id="chatbot-modal-overlay" class="chatbot-modal-overlay">
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <span>Asif Digital AI Assistant</span>
+                <button id="close-chatbot" class="text-white text-xl focus:outline-none">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Initial AI message will be dynamically added by JS -->
+            </div>
+            <div class="loading-indicator" id="loading-indicator" style="display: none;">Typing...</div>
+            <div class="chat-input-area">
+                <textarea id="chat-input" placeholder="Ask me anything about digital marketing..." rows="1"></textarea>
+                <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') { // Prevent error for placeholder blog link
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Calculate offset for fixed header
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+                        if (mobileMenu.classList.contains('open')) {
+                            mobileMenu.classList.remove('open');
+                            mobileMenuOverlay.style.display = 'none';
+                        }
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+                mobileMenuOverlay.style.display = 'block';
+            });
+
+            closeMobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuOverlay.style.display = 'none';
+            });
+
+            mobileMenuOverlay.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuOverlay.style.display = 'none';
+            });
+            
+
+            // Close mobile menu when a link is clicked
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuOverlay.style.display = 'none';
+                });
+            });
+
+            // Function to animate numbers
+            function animateNumber(element) {
+                const target = parseInt(element.dataset.target);
+                const suffix = element.dataset.suffix || '';
+                let current = 0;
+                const duration = 1500; // milliseconds
+                const start = performance.now();
+
+                function updateNumber(timestamp) {
+                    const progress = (timestamp - start) / duration;
+                    if (progress < 1) {
+                        current = Math.floor(progress * target);
+                        element.textContent = current + suffix;
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = target + suffix;
+                        element.classList.add('animated'); // Mark as animated
+                    }
+                }
+                requestAnimationFrame(updateNumber);
+            }
+
+            // Intersection Observer for scroll animations and number animation
+            const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+            const numberElements = document.querySelectorAll('.stat-number[data-target]');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // General scroll animation
+                        entry.target.classList.add('is-visible');
+
+                        // Number animation
+                        if (entry.target.classList.contains('stat-number') && !entry.target.classList.contains('animated')) {
+                            animateNumber(entry.target);
+                        }
+                    } else {
+                        // Remove 'is-visible' when element is out of view to allow re-animation
+                        // entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            animateOnScrollElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            numberElements.forEach(element => {
+                observer.observe(element);
+            });
+
+
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                    header.classList.remove('header-transparent');
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                    header.classList.add('header-transparent');
+                }
+            });
+
+            // Hero Section Image Slider Logic
+            const heroImages = document.querySelectorAll('.hero-background-slider img');
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                heroImages[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+                heroImages[currentImageIndex].classList.add('active');
+            }
+
+            // Start the slider after a short delay to ensure initial image is visible
+            setTimeout(() => {
+                if (heroImages.length > 0) {
+                    heroImages[currentImageIndex].classList.add('active'); // Ensure first image is active on load
+                    setInterval(showNextImage, 5000); // Change image every 5 seconds
+                }
+            }, 1000); // Start after 1 second
+
+            // Chatbot Logic
+            const chatbotToggleButton = document.getElementById('chatbot-toggle-button');
+            const chatbotModalOverlay = document.getElementById('chatbot-modal-overlay');
+            const closeChatbotButton = document.getElementById('close-chatbot');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const sendButton = document.getElementById('send-button');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            if (chatbotToggleButton && chatbotModalOverlay) {
+                let chatHistory = [
+                    { role: "ai", text: "Welcome! I'm your AI assistant from Asif Digital Marketing. How can I assist you with your digital marketing needs today?" }
+                ];
+
+                function addMessageToChat(message, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('chat-message', sender);
+                    messageDiv.innerHTML = message;
+                    chatMessages.appendChild(messageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                addMessageToChat(chatHistory[0].text, chatHistory[0].role);
+
+                chatbotToggleButton.addEventListener('click', () => {
+                    chatbotModalOverlay.style.display = 'flex';
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+
+                closeChatbotButton.addEventListener('click', () => {
+                    chatbotModalOverlay.style.display = 'none';
+                });
+
+                chatbotModalOverlay.addEventListener('click', (e) => {
+                    if (e.target === chatbotModalOverlay) {
+                        chatbotModalOverlay.style.display = 'none';
+                    }
+                });
+
+                async function sendMessage() {
+                    const userMessageText = chatInput.value.trim();
+                    if (userMessageText === '') return;
+
+                    addMessageToChat(userMessageText, 'user');
+                    chatInput.value = '';
+                    chatInput.style.height = 'auto';
+                    loadingIndicator.style.display = 'block';
+
+                    try {
+                        const response = await fetch('/.netlify/functions/proxy', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ message: userMessageText })
+                        });
+                        const result = await response.json();
+                        loadingIndicator.style.display = 'none';
+                        const aiResponseText = response.ok ? result.response : `Error: ${result.error || 'Unknown error'}`;
+                        addMessageToChat(aiResponseText, 'ai');
+                    } catch (error) {
+                        console.error('Error sending message:', error);
+                        loadingIndicator.style.display = 'none';
+                        addMessageToChat("Oops! Something went wrong. Please try again later.", 'ai');
+                    }
+                }
+
+                sendButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                chatInput.addEventListener('input', () => {
+                    chatInput.style.height = 'auto';
+                    chatInput.style.height = chatInput.scrollHeight + 'px';
+                });
+            }
+
+            // --- Content Idea Generator Logic ---
+            const generateBtn = document.getElementById('generate-ideas-btn');
+            const industryInput = document.getElementById('industry-input');
+            const ideasResult = document.getElementById('ideas-result');
+            const ideasContent = document.getElementById('ideas-content');
+            const ideasLoading = document.getElementById('ideas-loading');
+
+            if (generateBtn) {
+                generateBtn.addEventListener('click', async () => {
+                    const industry = industryInput.value.trim();
+                    if (industry === '') {
+                        // Using a more modern notification instead of alert
+                        ideasResult.style.display = 'block';
+                        ideasLoading.style.display = 'none';
+                        ideasContent.textContent = 'Please enter your business type or industry first.';
+                        return;
+                    }
+
+                    ideasResult.style.display = 'block';
+                    ideasLoading.style.display = 'block';
+                    ideasContent.innerHTML = '';
+                    generateBtn.disabled = true;
+                    generateBtn.innerText = 'Generating...';
+
+                    try {
+                        const response = await fetch('/.netlify/functions/content-generator', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ industry: industry })
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            ideasContent.textContent = result.ideas;
+                        } else {
+                            ideasContent.textContent = `Error: ${result.error || 'Failed to generate ideas.'}`;
+                        }
+                    } catch (error) {
+                        console.error('Error calling content generator:', error);
+                        ideasContent.textContent = 'An unexpected error occurred. Please try again.';
+                    } finally {
+                        ideasLoading.style.display = 'none';
+                        generateBtn.disabled = false;
+                        generateBtn.innerText = 'Generate Content Ideas';
+                    }
+                });
+            }
+
+            // --- Ad Copy Generator Logic (NEW) ---
+            const generateAdCopyBtn = document.getElementById('generate-ad-copy-btn');
+            const adProductInput = document.getElementById('ad-product-input');
+            const adAudienceInput = document.getElementById('ad-audience-input');
+            const adPlatformSelect = document.getElementById('ad-platform-select');
+            const adCopyResult = document.getElementById('ad-copy-result');
+            const adCopyContent = document.getElementById('ad-copy-content');
+            const adCopyLoading = document.getElementById('ad-copy-loading');
+
+            if (generateAdCopyBtn) {
+                generateAdCopyBtn.addEventListener('click', async () => {
+                    const product = adProductInput.value.trim();
+                    const audience = adAudienceInput.value.trim();
+                    const platform = adPlatformSelect.value;
+
+                    if (!product || !audience) {
+                        adCopyResult.style.display = 'block';
+                        adCopyLoading.style.display = 'none';
+                        adCopyContent.textContent = 'Please fill out the product/service and target audience fields.';
+                        return;
+                    }
+
+                    adCopyResult.style.display = 'block';
+                    adCopyLoading.style.display = 'block';
+                    adCopyContent.innerHTML = '';
+                    generateAdCopyBtn.disabled = true;
+                    generateAdCopyBtn.innerText = 'Generating...';
+
+                    try {
+                        const response = await fetch('/.netlify/functions/ad-copy-generator', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ product, audience, platform })
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            adCopyContent.textContent = result.adCopy;
+                        } else {
+                            adCopyContent.textContent = `Error: ${result.error || 'Failed to generate ad copy.'}`;
+                        }
+                    } catch (error) {
+                        console.error('Error calling ad copy generator:', error);
+                        adCopyContent.textContent = 'An unexpected error occurred. Please try again.';
+                    } finally {
+                        adCopyLoading.style.display = 'none';
+                        generateAdCopyBtn.disabled = false;
+                        generateAdCopyBtn.innerText = 'Generate Ad Copy';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
