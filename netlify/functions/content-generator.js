@@ -32,7 +32,7 @@ exports.handler = async (event) => {
     }
 
     const openRouterApiUrl = "https://openrouter.ai/api/v1/chat/completions";
-    const modelId = "google/gemini-pro";
+    const modelId = "gemini-flash-1.5";
 
     const systemPrompt = `
         You are a creative social media marketing expert for businesses in the UAE.
