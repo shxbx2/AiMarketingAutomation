@@ -1,81 +1,67 @@
-/**
- * Netlify function for the AI Social Post Generator.
- * This is the correct file for the "Generator" on your website.
- * It securely reads the API key from Netlify's environment variables.
- */
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+
 exports.handler = async (event) => {
+    // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' };
     }
-    
+
+    // Get the API Key from Netlify Environment Variables
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-        return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY is not set in Netlify. Please add it in your site configuration." }) };
+        return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY environment variable is not set." }) };
     }
 
-    if (!event.body) {
-        return { statusCode: 400, body: 'Request body is missing.' };
-    }
-
-    let requestBody;
     try {
-        requestBody = JSON.parse(event.body);
-    } catch (error) {
-        return { statusCode: 400, body: 'Invalid JSON in request body.' };
-    }
+        const requestBody = JSON.parse(event.body);
+        const topic = requestBody.topic;
 
-    const topic = requestBody.topic;
-    if (!topic) {
-        return { statusCode: 400, body: 'Missing "topic" in request body.' };
-    }
-
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-    
-    // This prompt is specifically for SOCIAL MEDIA POSTS
-    const systemPrompt = "You are an expert social media manager for businesses in the UAE. Your task is to generate a short, engaging, and professional social media post (for platforms like Instagram or Facebook) based on the user's topic. The post should be concise (2-4 sentences), include relevant emojis, and end with 3-5 relevant hashtags (e.g., #Dubai #Sharjah #UAEMarketing). Do not use any markdown formatting like asterisks.";
-    const userQuery = `Generate a social media post about: "${topic}"`;
-
-    const payload = {
-        contents: [{ parts: [{ text: userQuery }] }],
-        systemInstruction: {
-            parts: [{ text: systemPrompt }]
-        },
-        generationConfig: {
-            temperature: 0.8,
-            maxOutputTokens: 200
+        if (!topic) {
+            return { statusCode: 400, body: JSON.stringify({ error: 'Missing "topic" in request body.' }) };
         }
-    };
+        
+        const genAI = new GoogleGenerativeAI(apiKey);
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-05-20" });
 
-    try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
+        // --- SEO UPDATE: Detailed System Instruction for better, more reliable output ---
+        const systemInstruction = {
+            role: "system",
+            parts: [{ text: `You are an expert social media manager for businesses in the UAE. Your task is to generate a single, engaging social media post based on a given topic.
+
+            **Strict Rules:**
+            1.  **Format:** The post must be a single block of text. Do NOT use any Markdown (like asterisks for bold).
+            2.  **Content:** Include relevant, popular, and local hashtags (e.g., #Dubai, #Sharjah, #UAELife).
+            3.  **Tone:** The tone should be upbeat, professional, and promotional. Use relevant emojis to make it visually appealing.
+            4.  **Language:** Generate the post in English.
+            5.  **Output:** Your entire response must ONLY be the social media post itself. Do not add any introductory phrases like "Here is the post:" or any other conversational text. Just the post content.
+            
+            Example Topic: Summer sale for a Dubai fashion store
+            Example Output:
+            🔥 BIGGEST SUMMER SALE is ON! 🔥 Beat the heat with sizzling hot deals at our Dubai store. Get up to 50% off on all summer collections! 👗🕶️ Don't miss out! #DubaiFashion #SummerSale #DubaiDeals #UAEShopping #FashionistaDXB`
+            }],
+        };
+
+        const chat = model.startChat({
+            history: [systemInstruction],
+            generationConfig: {
+                maxOutputTokens: 200,
+            },
         });
 
-        const data = await response.json();
+        const result = await chat.sendMessage(topic);
+        const response = await result.response;
+        const postText = response.text();
 
-        if (!response.ok) {
-            console.error("Error from Gemini API:", data);
-            return {
-                statusCode: response.status,
-                body: JSON.stringify({ error: data.error ? data.error.message : 'Unknown API error.' })
-            };
-        }
-
-        const generatedPost = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "Sorry, I couldn't generate a post. Please try again.";
-        
-        // ** THE FIX IS HERE: This returns a 'post' object, which your website expects. **
         return {
             statusCode: 200,
-            body: JSON.stringify({ post: generatedPost })
+            body: JSON.stringify({ post: postText.trim() })
         };
 
     } catch (error) {
-        console.error('Proxy function error:', error);
+        console.error('Error in generator-proxy function:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Internal Server Error.' })
+            body: JSON.stringify({ error: 'Internal Server Error', details: error.message })
         };
     }
 };
