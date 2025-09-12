@@ -1,8 +1,12 @@
 {
-  "name": "netlify-functions-for-chatbot",
+  "name": "netlify-functions-for-asif-digital",
   "version": "1.0.0",
-  "description": "Serverless proxy for Hugging Face API",
+  "description": "Serverless functions for Asif Digital Marketing website",
   "main": "proxy.js",
-  "author": "",
-  "license": "ISC"
+  "author": "Asif Khan",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1"
+  }
 }
+
