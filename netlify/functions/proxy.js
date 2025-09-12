@@ -43,7 +43,7 @@ exports.handler = async (event) => {
         * **Local SEO:** Helping businesses get found on Google Maps in their local area.
         * **WhatsApp Chatbots & Automation:** Providing 24/7 customer service and lead follow-up.
         * **Custom WordPress Web Design:** Building beautiful, functional websites.
-    * **Contact Information:** The best way to get started is with a free consultation. Users can call or WhatsApp Asif directly at +971 54 586 6094.
+    * **Contact Information:** The best way to get started is with a free consultation. Users can call or WhatsApp Asif directly at +971 54 586 6094 And email on Asifk199707@gmailcom.
 
     **Interaction Rules:**
 
