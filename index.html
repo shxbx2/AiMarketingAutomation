@@ -273,7 +273,8 @@
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-        /* Adjusted hero-title for responsiveness */
+        
+        /* UPDATE: Adjusted hero-title for responsiveness */
         .hero-title {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
@@ -282,17 +283,17 @@
             letter-spacing: 0.1em;
             margin-bottom: 1rem;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            /* Responsive font sizes */
-            font-size: 3rem; /* Default for small screens */
+            /* Responsive font sizes - Made smaller */
+            font-size: 2.5rem; /* Default for small screens */
         }
         @media (min-width: 768px) { /* md breakpoint */
             .hero-title {
-                font-size: 4.5rem;
+                font-size: 3.5rem;
             }
         }
         @media (min-width: 1024px) { /* lg breakpoint */
             .hero-title {
-                font-size: 5.5rem; /* Slightly larger for desktop */
+                font-size: 4.5rem; /* Slightly larger for desktop */
             }
         }
 
@@ -788,8 +789,12 @@
             font-weight: 600;
             transition: opacity 0.3s ease;
         }
+        .chat-input-area button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-        .chat-input-area button:hover {
+        .chat-input-area button:hover:not(:disabled) {
             opacity: 0.9;
         }
 
@@ -857,6 +862,7 @@
                 <a href="#welcome" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Welcome</a>
                 <a href="#services" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Services</a>
                 <a href="#ai-solutions" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">AI Solutions</a>
+                <a href="#gemini-demo" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">✨ AI Generator</a>
                 <a href="#case-studies" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Case Studies</a>
                 <a href="#testimonials" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">Testimonials</a>
                 <a href="#faq" class="text-sm text-dark-gray hover:text-light-gray header-nav-link">FAQ</a>
@@ -887,6 +893,7 @@
             <a href="#welcome" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Welcome</a>
             <a href="#services" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Services</a>
             <a href="#ai-solutions" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">AI Solutions</a>
+            <a href="#gemini-demo" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">✨ AI Generator</a>
             <a href="#case-studies" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Case Studies</a>
             <a href="#testimonials" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">Testimonials</a>
             <a href="#faq" class="text-light-gray hover:text-accent transition-colors duration-300 mobile-nav-link">FAQ</a>
@@ -906,7 +913,7 @@
             </div>
             <div class="hero-content">
                 <!-- SEO UPDATE: H1 tag updated for local focus -->
-                <h1 class="hero-title text-4xl md:text-7xl lg:text-12xl font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
+                <h1 class="hero-title font-extrabold animate-fade-in-down" style="animation-delay: 0.2s;">
                     AI Digital Marketing in Sharjah, Dubai & Ajman
                 </h1>
                 <!-- SEO UPDATE: Subtitle updated for clarity -->
@@ -1011,6 +1018,28 @@
                             <li><i class="fas fa-check-circle text-accent-gradient-start mr-2"></i> Targeted PPC Campaigns</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- GEMINI API FEATURE: AI Social Post Generator Section -->
+        <section id="gemini-demo" class="py-20 section-with-bg" style="background-image: url('https://images.pexels.com/photos/7130473/pexels-photo-7130473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="section-content container mx-auto px-6 text-center">
+                <h2 class="section-title mb-4 animate-on-scroll">✨ AI Social Post Generator</h2>
+                <p class="text-lg text-dark-gray mb-12 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+                    Experience the power of AI content creation. Enter a topic for your business, and let our Gemini-powered AI craft a social media post for you instantly.
+                </p>
+                <div class="card max-w-3xl mx-auto animate-on-scroll zoom-in p-8" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <input type="text" id="post-topic-input" class="w-full px-4 py-3 rounded-lg bg-primary-dark border border-gray-700 focus:outline-none focus:border-accent" placeholder="e.g., 'Special offer on coffee in Sharjah'">
+                        <button id="generate-post-button" class="btn-primary w-full sm:w-auto flex-shrink-0">
+                            Generate Post
+                        </button>
+                    </div>
+                    <div id="generated-post-container" class="bg-primary-dark p-6 rounded-lg border border-dark text-left min-h-[150px] whitespace-pre-wrap">
+                        <p class="text-dark-gray">Your generated social media post will appear here...</p>
+                    </div>
+                     <div class="loading-indicator mt-4" id="generator-loading-indicator" style="display: none;">Generating with Gemini...</div>
                 </div>
             </div>
         </section>
@@ -1658,7 +1687,7 @@
                 setInterval(showNextImage, 5000); // Change image every 5 seconds
             }, 1000); // Start after 1 second
 
-            // Chatbot Logic
+            // --- GEMINI API CHATBOT LOGIC ---
             const chatbotToggleButton = document.getElementById('chatbot-toggle-button');
             const chatbotModalOverlay = document.getElementById('chatbot-modal-overlay');
             const closeChatbotButton = document.getElementById('close-chatbot');
@@ -1667,23 +1696,20 @@
             const sendButton = document.getElementById('send-button');
             const loadingIndicator = document.getElementById('loading-indicator');
 
-            // Add checks to ensure elements exist before adding listeners
             if (!chatbotToggleButton || !chatbotModalOverlay || !closeChatbotButton || !chatMessages || !chatInput || !sendButton || !loadingIndicator) {
-                console.error("One or more chatbot elements not found. Chatbot functionality may be limited.");
+                console.error("One or more chatbot elements not found.");
             } else {
-                let chatHistory = [
-                    { role: "ai", text: "Welcome! I'm your AI assistant from Asif Digital. How can I assist you with your digital marketing needs today?" }
-                ];
+                let chatHistory = [];
 
                 function addMessageToChat(message, sender) {
                     const messageDiv = document.createElement('div');
                     messageDiv.classList.add('chat-message', sender);
-                    messageDiv.innerHTML = message.replace(/\n/g, '<br>'); // Replace newlines with <br> for proper rendering
+                    messageDiv.innerHTML = message.replace(/\n/g, '<br>');
                     chatMessages.appendChild(messageDiv);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }
-
-                addMessageToChat(chatHistory[0].text, chatHistory[0].role);
+                
+                addMessageToChat("Welcome! I'm your AI assistant from Asif Digital, powered by Gemini. How can I assist you today?", 'ai');
 
                 chatbotToggleButton.addEventListener('click', () => {
                     chatbotModalOverlay.style.display = 'flex';
@@ -1705,9 +1731,11 @@
                     if (userMessageText === '') return;
 
                     addMessageToChat(userMessageText, 'user');
+                    chatHistory.push({ role: "user", parts: [{ text: userMessageText }] });
                     chatInput.value = '';
                     chatInput.style.height = 'auto';
                     loadingIndicator.style.display = 'block';
+                    sendButton.disabled = true;
 
                     const proxyUrl = '/.netlify/functions/proxy';
 
@@ -1715,15 +1743,15 @@
                         const response = await fetch(proxyUrl, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ message: userMessageText })
+                            body: JSON.stringify({ history: chatHistory })
                         });
 
                         const result = await response.json();
-                        loadingIndicator.style.display = 'none';
-
                         let aiResponseText = "Sorry, I couldn't get a response. Please try again.";
+                        
                         if (response.ok && result.response) {
                             aiResponseText = result.response;
+                            chatHistory.push({ role: "model", parts: [{ text: aiResponseText }] });
                         } else {
                             aiResponseText = `Error: ${result.error || 'Unknown error'}`;
                             console.error("Error from proxy/AI:", result);
@@ -1732,8 +1760,10 @@
 
                     } catch (error) {
                         console.error('Error sending message via proxy:', error);
-                        loadingIndicator.style.display = 'none';
                         addMessageToChat("Oops! Something went wrong. Please try again later.", 'ai');
+                    } finally {
+                        loadingIndicator.style.display = 'none';
+                        sendButton.disabled = false;
                     }
                 }
 
@@ -1747,10 +1777,59 @@
 
                 chatInput.addEventListener('input', () => {
                     chatInput.style.height = 'auto';
-                    chatInput.style.height = chatInput.scrollHeight + 'px';
+                    chatInput.style.height = (chatInput.scrollHeight) + 'px';
+                });
+            }
+
+            // --- GEMINI API SOCIAL POST GENERATOR LOGIC ---
+            const generateButton = document.getElementById('generate-post-button');
+            const topicInput = document.getElementById('post-topic-input');
+            const postContainer = document.getElementById('generated-post-container');
+            const generatorLoading = document.getElementById('generator-loading-indicator');
+
+            if(generateButton) {
+                generateButton.addEventListener('click', async () => {
+                    const topic = topicInput.value.trim();
+                    if (!topic) {
+                        postContainer.innerHTML = '<p class="text-dark-gray">Please enter a topic first.</p>';
+                        return;
+                    }
+
+                    generatorLoading.style.display = 'block';
+                    generateButton.disabled = true;
+                    postContainer.innerHTML = '';
+
+                    const proxyUrl = '/.netlify/functions/generator-proxy';
+
+                    try {
+                        const response = await fetch(proxyUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ topic: topic })
+                        });
+
+                        const result = await response.json();
+                        let generatedPost = "Sorry, I couldn't generate a post. Please try again.";
+
+                        if (response.ok && result.post) {
+                            generatedPost = result.post;
+                        } else {
+                            generatedPost = `Error: ${result.error || 'Unknown error'}`;
+                            console.error("Error from generator proxy/AI:", result);
+                        }
+                        postContainer.innerHTML = `<p class="text-light-gray">${generatedPost}</p>`;
+
+                    } catch (error) {
+                        console.error('Error calling generator proxy:', error);
+                        postContainer.innerHTML = '<p class="text-dark-gray">Oops! A network error occurred. Please try again later.</p>';
+                    } finally {
+                        generatorLoading.style.display = 'none';
+                        generateButton.disabled = false;
+                    }
                 });
             }
         });
     </script>
 </body>
 </html>
+
