@@ -1,11 +1,17 @@
 /**
  * Netlify function for the AI Social Post Generator.
- * This function is powered by the Gemini API.
+ * This function is powered by the Gemini API and reads the key from Netlify environment variables.
  */
 exports.handler = async (event) => {
     // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' };
+    }
+    
+    // IMPORTANT: Get the API key from Netlify's environment variables
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+        return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY is not set in Netlify." }) };
     }
 
     if (!event.body) {
@@ -24,8 +30,6 @@ exports.handler = async (event) => {
         return { statusCode: 400, body: 'Missing "topic" in request body.' };
     }
 
-    // The API key is an empty string and will be automatically provided by the environment.
-    const apiKey = "";
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
     
     const systemPrompt = "You are an expert social media manager for businesses in the UAE. Your task is to generate a short, engaging, and professional social media post (for platforms like Instagram or Facebook) based on the user's topic. The post should be concise (2-4 sentences), include relevant emojis, and end with 3-5 relevant hashtags (e.g., #Dubai #Sharjah #UAEMarketing).";
