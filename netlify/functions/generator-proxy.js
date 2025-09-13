@@ -1,67 +1,98 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-
+ /**
+ * Netlify function for an AI Social Post Generator.
+ * This acts as a secure proxy to the Google Gemini API.
+ */
 exports.handler = async (event) => {
     // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' };
     }
 
-    // Get the API Key from Netlify Environment Variables
+    // Securely get the API key from Netlify environment variables
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-        return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY environment variable is not set." }) };
+        console.error("GEMINI_API_KEY environment variable not set.");
+        return { 
+            statusCode: 500, 
+            body: JSON.stringify({ error: "API key is not configured on the server." }) 
+        };
     }
 
     try {
-        const requestBody = JSON.parse(event.body);
-        const topic = requestBody.topic;
+        const body = JSON.parse(event.body);
+        const topic = body.topic;
 
         if (!topic) {
-            return { statusCode: 400, body: JSON.stringify({ error: 'Missing "topic" in request body.' }) };
+            return { 
+                statusCode: 400, 
+                body: JSON.stringify({ error: 'Missing "topic" in request body.' }) 
+            };
         }
-        
-        const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-05-20" });
 
-        // --- SEO UPDATE: Detailed System Instruction for better, more reliable output ---
-        const systemInstruction = {
-            role: "system",
-            parts: [{ text: `You are an expert social media manager for businesses in the UAE. Your task is to generate a single, engaging social media post based on a given topic.
+        // Define a strong persona and instructions for the AI model
+        const systemPrompt = `
+            You are 'Sparky', an expert social media manager for 'Asif Digital', a digital marketing agency in the UAE.
+            Your task is to generate an engaging, professional, and creative social media post based on a given topic.
 
             **Strict Rules:**
-            1.  **Format:** The post must be a single block of text. Do NOT use any Markdown (like asterisks for bold).
-            2.  **Content:** Include relevant, popular, and local hashtags (e.g., #Dubai, #Sharjah, #UAELife).
-            3.  **Tone:** The tone should be upbeat, professional, and promotional. Use relevant emojis to make it visually appealing.
-            4.  **Language:** Generate the post in English.
-            5.  **Output:** Your entire response must ONLY be the social media post itself. Do not add any introductory phrases like "Here is the post:" or any other conversational text. Just the post content.
-            
-            Example Topic: Summer sale for a Dubai fashion store
-            Example Output:
-            🔥 BIGGEST SUMMER SALE is ON! 🔥 Beat the heat with sizzling hot deals at our Dubai store. Get up to 50% off on all summer collections! 👗🕶️ Don't miss out! #DubaiFashion #SummerSale #DubaiDeals #UAEShopping #FashionistaDXB`
+            1.  **Format:** The post must be a single block of text.
+            2.  **Tone:** Be upbeat, professional, and persuasive.
+            3.  **Content:** Include relevant emojis and 2-3 popular, relevant hashtags (e.g., #DubaiLife, #SharjahBusiness, #UAEMarketing).
+            4.  **Clarity:** Ensure the post is clear, concise, and ready to be copied and pasted directly to platforms like Instagram or Facebook.
+            5.  **Output:** ONLY output the generated post content. Do not add any introductory text like "Here is your post:" or any other conversational filler.
+        `;
+
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        // Construct the payload for the Gemini API
+        const payload = {
+            contents: [{
+                parts: [{
+                    text: `Topic: "${topic}"`
+                }]
             }],
+            systemInstruction: {
+                parts: [{
+                    text: systemPrompt
+                }]
+            },
+            generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 256,
+            }
         };
 
-        const chat = model.startChat({
-            history: [systemInstruction],
-            generationConfig: {
-                maxOutputTokens: 200,
+        const apiResponse = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
+            body: JSON.stringify(payload),
         });
 
-        const result = await chat.sendMessage(topic);
-        const response = await result.response;
-        const postText = response.text();
+        const responseData = await apiResponse.json();
+
+        if (!apiResponse.ok || !responseData.candidates || !responseData.candidates[0].content) {
+             console.error('Error from Gemini API:', responseData);
+             const errorMessage = responseData.error ? responseData.error.message : 'Failed to get a valid response from the AI model.';
+             return {
+                 statusCode: apiResponse.status,
+                 body: JSON.stringify({ error: errorMessage, details: responseData })
+             };
+        }
+        
+        const generatedText = responseData.candidates[0].content.parts[0].text.trim();
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ post: postText.trim() })
+            body: JSON.stringify({ post: generatedText }),
         };
 
     } catch (error) {
         console.error('Error in generator-proxy function:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Internal Server Error', details: error.message })
+            body: JSON.stringify({ error: 'Internal Server Error in proxy function', details: error.message }),
         };
     }
 };
