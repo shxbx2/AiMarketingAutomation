@@ -1,4 +1,7 @@
- /**
+ // This line is the crucial fix for the Netlify environment.
+require('cross-fetch/polyfill');
+
+/**
  * Netlify function for an AI Social Post Generator.
  * This acts as a secure proxy to the Google Gemini API.
  */
