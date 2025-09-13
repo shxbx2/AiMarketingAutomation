@@ -1,12 +1,10 @@
 {
-  "name": "netlify-functions-for-asif-digital",
+  "name": "asif-digital-functions",
   "version": "1.0.0",
-  "description": "Serverless functions for Asif Digital Marketing website",
-  "main": "proxy.js",
-  "author": "Asif Khan",
-  "license": "ISC",
+  "description": "Dependencies for Netlify serverless functions",
   "dependencies": {
-    "@google/generative-ai": "^0.14.1"
+    "@google/generative-ai": "^0.14.1",
+    "cross-fetch": "^4.0.0"
   }
 }
 
