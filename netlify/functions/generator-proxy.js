@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     }
     
     const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
+    if (AIzaSyBi1pm4Wi7y8va6IcVUNHC0pJRLND2AvTs) {
         return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY is not set." }) };
     }
 
@@ -25,7 +25,7 @@ exports.handler = async (event) => {
     }
 
     // Corrected Model Name to gemini-1.5-flash
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${AIzaSyBi1pm4Wi7y8va6IcVUNHC0pJRLND2AvTs}`;
     
     const systemPrompt = "You are an expert social media manager. Create a short, engaging social media post for a business in the UAE based on the user's topic. Include 3 relevant hashtags.";
 
