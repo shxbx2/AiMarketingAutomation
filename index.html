@@ -551,6 +551,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. HEADER & NAVIGATION LOGIC ---
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('header-scrolled', window.scrollY > 50);
@@ -571,6 +572,7 @@
             });
         });
 
+        // --- 2. MOBILE MENU LOGIC ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -591,7 +593,7 @@
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
         mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
-
+        // --- 3. ANIMATIONS & STATS COUNTER ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -626,7 +628,7 @@
             }
         }
 
-
+        // --- 4. HERO SLIDER ---
         const heroImages = document.querySelectorAll('.hero-background-slider img');
         let currentImageIndex = 0;
         setInterval(() => {
@@ -635,6 +637,7 @@
             heroImages[currentImageIndex].classList.add('active');
         }, 5000);
         
+        // --- 5. CHATBOT LOGIC ---
         const chatbotToggleButton = document.getElementById('chatbot-toggle-button');
         const chatbotModalOverlay = document.getElementById('chatbot-modal-overlay');
         const closeChatbotButton = document.getElementById('close-chatbot');
@@ -646,7 +649,7 @@
 
         function addMessageToChat(message, sender) {
             const messageDiv = document.createElement('div');
-            messageDiv.classList.add('chat-message', sender);
+            messageDiv.className = `chat-message ${sender}`;
             messageDiv.textContent = message;
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -655,45 +658,41 @@
         chatbotToggleButton.addEventListener('click', () => {
             chatbotModalOverlay.style.display = 'flex';
             if (chatHistory.length === 0) {
-                 const welcomeMessage = "Welcome! I'm Sparky, your AI assistant from Asif Digital. How can I assist you with your digital marketing needs today?";
+                 const welcomeMessage = "Welcome! I'm Sparky, your AI assistant from Asif Digital. How can I help you today?";
                  addMessageToChat(welcomeMessage, 'ai');
                  chatHistory.push({ role: 'model', parts: [{ text: welcomeMessage }] });
             }
         });
         closeChatbotButton.addEventListener('click', () => chatbotModalOverlay.style.display = 'none');
-        chatbotModalOverlay.addEventListener('click', (e) => { if(e.target === chatbotModalOverlay) chatbotModalOverlay.style.display = 'none'; });
 
         async function sendMessage() {
-            const userMessageText = chatInput.value.trim();
-            if (userMessageText === '') return;
+            const userText = chatInput.value.trim();
+            if (!userText) return;
 
-            addMessageToChat(userMessageText, 'user');
-            chatHistory.push({ role: 'user', parts: [{ text: userMessageText }] });
+            addMessageToChat(userText, 'user');
+            chatHistory.push({ role: 'user', parts: [{ text: userText }] });
             chatInput.value = '';
             loadingIndicator.style.display = 'block';
 
             try {
                 const response = await fetch('/.netlify/functions/proxy', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ history: chatHistory })
                 });
                 const result = await response.json();
-                
-                const aiResponseText = result.response || "Sorry, I encountered an error. Please try again.";
-                addMessageToChat(aiResponseText, 'ai');
-                chatHistory.push({ role: 'model', parts: [{ text: aiResponseText }] });
-
+                const reply = result.response || "I'm having trouble connecting. Check your Netlify settings.";
+                addMessageToChat(reply, 'ai');
+                chatHistory.push({ role: 'model', parts: [{ text: reply }] });
             } catch (error) {
-                console.error('Chatbot error:', error);
-                addMessageToChat("Oops! Something went wrong. Please try again later.", 'ai');
+                addMessageToChat("Error: Function not found. Ensure proxy.js is in netlify/functions folder.", "ai");
             } finally {
                 loadingIndicator.style.display = 'none';
             }
         }
         sendButton.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
         
+        // --- 6. AI SOCIAL POST GENERATOR LOGIC ---
         const generateButton = document.getElementById('generate-post-button');
         const topicInput = document.getElementById('generator-topic');
         const generatorLoading = document.getElementById('generator-loading');
@@ -702,11 +701,7 @@
 
         async function generatePost() {
             const topic = topicInput.value.trim();
-            if (topic === '') {
-                resultText.textContent = 'Please enter a topic.';
-                resultContainer.style.display = 'block';
-                return;
-            }
+            if (!topic) return;
 
             generatorLoading.style.display = 'block';
             resultContainer.style.display = 'none';
@@ -715,22 +710,14 @@
             try {
                 const response = await fetch('/.netlify/functions/generator-proxy', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ topic: topic })
                 });
-
                 const result = await response.json();
-
-                if (response.ok) {
-                    resultText.textContent = result.post || "Sorry, I couldn't generate a post. Please try again.";
-                } else {
-                    console.error('Generator Error:', result.error);
-                    resultText.textContent = `Error: ${result.error || 'Unknown error'}`;
-                }
-
+                
+                // Matches the "post" property in the updated generator-proxy.js
+                resultText.textContent = result.post || "Sorry, I couldn't generate a post.";
             } catch (error) {
-                console.error('Generator fetch error:', error);
-                resultText.textContent = 'Error: Could not connect to the generator service.';
+                resultText.textContent = 'Error: Ensure generator-proxy.js is in netlify/functions folder.';
             } finally {
                 generatorLoading.style.display = 'none';
                 resultContainer.style.display = 'block';
@@ -738,7 +725,7 @@
             }
         }
         generateButton.addEventListener('click', generatePost);
-        topicInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); generatePost(); } });
+        topicInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') generatePost(); });
     });
     </script>
 </body>
